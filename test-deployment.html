@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deployment Test - Syria PA System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f7fa;
+        }
+        .test-item {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .test-item.success {
+            border-left-color: #28a745;
+            background: #f8fff9;
+        }
+        .test-item.error {
+            border-left-color: #dc3545;
+            background: #fff8f8;
+        }
+        .test-link {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .test-link:hover {
+            text-decoration: underline;
+        }
+        button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #2980b9;
+        }
+        .status {
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+        .status.loading {
+            background: #fff3cd;
+            color: #856404;
+        }
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+        }
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Syria PA System - Deployment Test</h1>
+    <p><strong>Use this page to test your deployment before going live.</strong></p>
+
+    <div class="test-item">
+        <h3>📋 Pre-Deployment Checklist</h3>
+        <div id="pre-checklist">
+            <label><input type="checkbox" id="files-ready"> All files present in project folder</label><br>
+            <label><input type="checkbox" id="domain-ready"> Domain pa.obaisukar.com configured</label><br>
+            <label><input type="checkbox" id="account-ready"> Digital Ocean account ready</label><br>
+            <label><input type="checkbox" id="backup-ready"> Files backed up</label><br>
+        </div>
+        <button onclick="checkPreRequisites()">Verify Prerequisites</button>
+        <div id="pre-status"></div>
+    </div>
+
+    <div class="test-item">
+        <h3>🔗 Test All Page Links</h3>
+        <p>Click each link to verify pages load correctly:</p>
+        
+        <div>
+            <h4>Main Pages:</h4>
+            <a href="./index.html" class="test-link" target="_blank">🏠 Root Index (should redirect)</a><br>
+            <a href="./index-en.html" class="test-link" target="_blank">🇺🇸 English Main Page</a><br>
+            <a href="./index-ar.html" class="test-link" target="_blank">🇸🇾 Arabic Main Page</a><br>
+        </div>
+        
+        <div style="margin-top: 15px;">
+            <h4>Technical Documents:</h4>
+            <a href="./technical-study-en.html" class="test-link" target="_blank">📋 Technical Study (EN)</a><br>
+            <a href="./shipping-guide-en.html" class="test-link" target="_blank">🚢 Shipping Guide (EN)</a><br>
+        </div>
+        
+        <div style="margin-top: 15px;">
+            <h4>CSS and Assets:</h4>
+            <a href="./css/separate-pages.css" class="test-link" target="_blank">🎨 Main CSS File</a><br>
+        </div>
+        
+        <button onclick="testAllLinks()">Auto-Test All Links</button>
+        <div id="link-test-results"></div>
+    </div>
+
+    <div class="test-item">
+        <h3>📱 Mobile Responsiveness Test</h3>
+        <p>Test your website on different screen sizes:</p>
+        <button onclick="testMobile('320px')">📱 Mobile (320px)</button>
+        <button onclick="testMobile('768px')">💻 Tablet (768px)</button>
+        <button onclick="testMobile('1200px')">🖥️ Desktop (1200px)</button>
+        <button onclick="resetViewport()">↻ Reset</button>
+        
+        <div id="mobile-test-info"></div>
+    </div>
+
+    <div class="test-item">
+        <h3>🌐 Cross-Browser Compatibility</h3>
+        <p><strong>Manual Test:</strong> Open your website in these browsers:</p>
+        <ul>
+            <li>✅ Chrome (recommended for testing)</li>
+            <li>✅ Firefox</li>
+            <li>✅ Edge</li>
+            <li>✅ Safari (if available)</li>
+            <li>✅ Mobile browsers</li>
+        </ul>
+    </div>
+
+    <div class="test-item">
+        <h3>⚡ Performance Check</h3>
+        <p>After deployment, test your website performance:</p>
+        <ul>
+            <li><strong>Google PageSpeed:</strong> <a href="https://pagespeed.web.dev/" target="_blank">https://pagespeed.web.dev/</a></li>
+            <li><strong>GTmetrix:</strong> <a href="https://gtmetrix.com/" target="_blank">https://gtmetrix.com/</a></li>
+            <li><strong>Target Score:</strong> 90+ for government websites</li>
+        </ul>
+    </div>
+
+    <div class="test-item">
+        <h3>🔧 Deployment Steps</h3>
+        <div id="deployment-steps">
+            <p><strong>Quick Start:</strong></p>
+            <ol>
+                <li>Open <a href="https://cloud.digitalocean.com" target="_blank">Digital Ocean Dashboard</a></li>
+                <li>Click "Create" → "Apps"</li>
+                <li>Upload your project files as ZIP</li>
+                <li>Deploy and test with temporary URL</li>
+                <li>Add domain pa.obaisukar.com</li>
+                <li>Configure DNS records</li>
+                <li>Enable SSL (automatic)</li>
+                <li>Go live! 🚀</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="test-item">
+        <h3>📊 Final Verification</h3>
+        <p>Once deployed, verify these features work:</p>
+        <div id="final-checklist">
+            <label><input type="checkbox"> Main page loads and redirects to English</label><br>
+            <label><input type="checkbox"> Language switching works (EN ↔ AR)</label><br>
+            <label><input type="checkbox"> All pricing displays correctly</label><br>
+            <label><input type="checkbox"> Technical study page loads</label><br>
+            <label><input type="checkbox"> Shipping guide page loads</label><br>
+            <label><input type="checkbox"> Mobile responsive design works</label><br>
+            <label><input type="checkbox"> SSL certificate active (🔒 in URL)</label><br>
+            <label><input type="checkbox"> Domain pa.obaisukar.com works</label><br>
+        </div>
+        
+        <div style="margin-top: 15px; padding: 15px; background: #e8f5e8; border-radius: 5px;">
+            <strong>🎯 Success Criteria:</strong>
+            <p>✅ All checkboxes above completed<br>
+            ✅ Website loads in under 3 seconds<br>
+            ✅ Professional appearance on mobile and desktop<br>
+            ✅ All links and navigation working<br>
+            ✅ Arabic text displays correctly with RTL layout</p>
+        </div>
+    </div>
+
+    <script>
+        function checkPreRequisites() {
+            const checkboxes = document.querySelectorAll('#pre-checklist input[type="checkbox"]');
+            const checked = Array.from(checkboxes).filter(cb => cb.checked).length;
+            const total = checkboxes.length;
+            
+            const statusDiv = document.getElementById('pre-status');
+            if (checked === total) {
+                statusDiv.innerHTML = '<div class="status success">✅ All prerequisites complete - Ready to deploy!</div>';
+            } else {
+                statusDiv.innerHTML = `<div class="status error">❌ ${total - checked} items remaining - Complete checklist before deploying</div>`;
+            }
+        }
+
+        function testAllLinks() {
+            const resultsDiv = document.getElementById('link-test-results');
+            resultsDiv.innerHTML = '<div class="status loading">🔄 Testing links...</div>';
+            
+            const links = [
+                './index.html',
+                './index-en.html', 
+                './index-ar.html',
+                './technical-study-en.html',
+                './shipping-guide-en.html',
+                './css/separate-pages.css'
+            ];
+            
+            let results = [];
+            let completed = 0;
+            
+            links.forEach(link => {
+                fetch(link)
+                    .then(response => {
+                        results.push(`✅ ${link} - ${response.status === 200 ? 'OK' : 'Error ' + response.status}`);
+                    })
+                    .catch(error => {
+                        results.push(`❌ ${link} - Failed to load`);
+                    })
+                    .finally(() => {
+                        completed++;
+                        if (completed === links.length) {
+                            resultsDiv.innerHTML = '<div class="status success">Link Test Results:</div><ul><li>' + results.join('</li><li>') + '</li></ul>';
+                        }
+                    });
+            });
+        }
+
+        function testMobile(width) {
+            const infoDiv = document.getElementById('mobile-test-info');
+            document.body.style.width = width;
+            document.body.style.margin = '0 auto';
+            document.body.style.border = '2px solid #3498db';
+            infoDiv.innerHTML = `<div class="status success">📱 Testing at ${width} width - Check layout responsiveness</div>`;
+        }
+
+        function resetViewport() {
+            document.body.style.width = '';
+            document.body.style.margin = '0 auto';
+            document.body.style.border = '';
+            document.getElementById('mobile-test-info').innerHTML = '<div class="status">🖥️ Viewport reset to normal</div>';
+        }
+    </script>
+</body>
+</html>
