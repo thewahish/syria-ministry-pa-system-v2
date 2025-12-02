@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syria PA System Project - COMPLETION DASHBOARD</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(180deg, rgba(41, 38, 99, 0.15) 0%, #F8FAFC 100%);
+            padding: 20px;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        .brand-colors {
+            --primary: #292663;
+            --secondary: #00AEEF;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --danger: #EF4444;
+            --light: #F8FAFC;
+            --muted: #94A3B8;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 24px;
+            padding: 20px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(41, 38, 99, 0.1);
+        }
+
+        .header h1 {
+            color: var(--primary);
+            margin: 0;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .header .subtitle {
+            color: var(--muted);
+            margin: 8px 0 0 0;
+            font-size: 14px;
+        }
+
+        .completion-banner {
+            background: linear-gradient(135deg, var(--success) 0%, #059669 100%);
+            color: white;
+            padding: 16px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.2);
+        }
+
+        .completion-banner h2 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .stat-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .stat-number {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--success);
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        .tasks-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .task-card {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            background: white;
+        }
+
+        .task-card.completed {
+            border-left: 4px solid var(--success);
+            background: linear-gradient(135deg, #ECFDF5 0%, #FFFFFF 100%);
+        }
+
+        .task-card.review {
+            border-left: 4px solid var(--warning);
+            background: linear-gradient(135deg, #FFFBEB 0%, #FFFFFF 100%);
+        }
+
+        .task-header {
+            padding: 16px 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .task-icon {
+            font-size: 28px;
+        }
+
+        .task-content {
+            flex: 1;
+        }
+
+        .task-title {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 2px;
+        }
+
+        .task-description {
+            margin: 0;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .status-badge {
+            background: var(--success);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        .status-badge.review {
+            background: var(--warning);
+        }
+
+        .expand-icon {
+            font-size: 16px;
+            color: var(--muted);
+            transform: rotate(0deg);
+            transition: transform 0.3s ease;
+        }
+
+        .expand-icon.expanded {
+            transform: rotate(180deg);
+        }
+
+        .task-details {
+            padding: 0 20px 20px 20px;
+            display: none;
+        }
+
+        .task-details.show {
+            display: block;
+        }
+
+        .alert-box {
+            background: rgba(245, 158, 11, 0.15);
+            border: 1px solid rgba(245, 158, 11, 0.4);
+            border-radius: 10px;
+            padding: 14px;
+            margin-bottom: 16px;
+        }
+
+        .alert-header {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 10px;
+        }
+
+        .alert-title {
+            font-weight: 600;
+            color: var(--warning);
+            font-size: 13px;
+        }
+
+        .alert-list {
+            margin: 0;
+            padding-left: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .alert-list li {
+            color: #92400E;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        .steps-container {
+            background: white;
+            border-radius: 10px;
+            padding: 14px;
+            border: 1px solid #E2E8F0;
+        }
+
+        .steps-header {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .file-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px;
+            background: #F8FAFC;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 1px solid #E2E8F0;
+            margin: 6px 0;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s ease;
+        }
+
+        .file-link:hover {
+            background: #F1F5F9;
+            border-color: var(--secondary);
+        }
+
+        .file-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--secondary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .file-info {
+            flex: 1;
+        }
+
+        .file-name {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .file-description {
+            font-size: 11px;
+            color: var(--muted);
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 8px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1e1a52;
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #0088cc;
+        }
+
+        .next-steps {
+            margin-top: 24px;
+            padding: 20px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 2px solid rgba(16, 185, 129, 0.2);
+            border-radius: 12px;
+        }
+
+        .next-steps h3 {
+            color: var(--success);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .next-steps-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .next-steps-list li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .step-number {
+            width: 24px;
+            height: 24px;
+            background: var(--success);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🎯 Syria PA System Project - COMPLETED!</h1>
+        <p class="subtitle">ADHD-Friendly Project Review Dashboard • Click cards to expand details</p>
+    </div>
+
+    <div class="completion-banner" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
+        <h2>⚠️ VISUAL VERIFICATION FAILED - CRITICAL ISSUES FOUND</h2>
+        <p>23+ missing images detected • Broken visual layout • Image generation required</p>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-icon">🖼️</div>
+            <div class="stat-number">23+</div>
+            <div class="stat-label">Missing Images</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">🚨</div>
+            <div class="stat-number">HIGH</div>
+            <div class="stat-label">Priority Issues</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">🎨</div>
+            <div class="stat-number">10</div>
+            <div class="stat-label">Critical Images</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">⏱️</div>
+            <div class="stat-number">48min</div>
+            <div class="stat-label">Est. Gen Time</div>
+        </div>
+    </div>
+
+    <div class="tasks-container">
+        <!-- Task 1: Review Main Website -->
+        <div class="task-card review">
+            <div class="task-header" onclick="toggleTask('task1')">
+                <span class="task-icon">🏠</span>
+                <div class="task-content">
+                    <h3 class="task-title">
+                        Review Main Website & Navigation
+                        <span class="status-badge review">REVIEW NEEDED</span>
+                    </h3>
+                    <p class="task-description">Check the main index.html and navigation between pages</p>
+                </div>
+                <span class="expand-icon" id="icon-task1">▼</span>
+            </div>
+            <div class="task-details" id="details-task1">
+                <div class="alert-box">
+                    <div class="alert-header">
+                        <span>⚠️</span>
+                        <span class="alert-title">DON'T FORGET (ADHD Alert!)</span>
+                    </div>
+                    <ul class="alert-list">
+                        <li>Test language toggle (EN/AR) works properly</li>
+                        <li>Check all navigation links point to correct pages</li>
+                        <li>Verify pricing displays correctly ($52,420 recommended)</li>
+                        <li>Make sure hero image loads and looks professional</li>
+                    </ul>
+                </div>
+                
+                <div class="steps-container">
+                    <div class="steps-header">
+                        <span>📋</span> Files to Review
+                    </div>
+                    
+                    <a href="index.html" class="file-link" target="_blank">
+                        <div class="file-icon">🏠</div>
+                        <div class="file-info">
+                            <div class="file-name">index.html</div>
+                            <div class="file-description">Main homepage with bilingual support</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="feedback-section" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin: 16px 0;">
+                    <label style="display: block; font-weight: 600; margin-bottom: 8px; color: var(--primary);">Your Feedback for This Task:</label>
+                    <textarea id="feedback-task1" placeholder="Enter any issues, corrections, or observations for the main page review..." style="width: 100%; min-height: 80px; padding: 8px; border: 1px solid #cbd5e0; border-radius: 6px; font-size: 14px;"></textarea>
+                    <div style="margin-top: 8px; font-size: 12px; color: var(--muted);">Issues found: Missing emojis in Arabic navigation (مقارنة النظام ثلاثي المستويات، تحليل المعدات)</div>
+                </div>
+                
+                <div class="action-buttons">
+                    <a href="index.html" class="btn btn-primary" target="_blank">🔍 Open Main Page</a>
+                    <button class="btn btn-secondary" onclick="markAsReviewed('task1')">✓ Mark Reviewed</button>
+                    <button class="btn" style="background: var(--warning); color: white;" onclick="saveFeedback('task1')">💾 Save Feedback</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Task 2: Budget & Pricing -->
+        <div class="task-card completed">
+            <div class="task-header" onclick="toggleTask('task2')">
+                <span class="task-icon">💰</span>
+                <div class="task-content">
+                    <h3 class="task-title">
+                        Budget Analysis & Pricing
+                        <span class="status-badge">✓ COMPLETED</span>
+                    </h3>
+                    <p class="task-description">Updated 2025 pricing with shipping costs included</p>
+                </div>
+                <span class="expand-icon" id="icon-task2">▼</span>
+            </div>
+            <div class="task-details" id="details-task2">
+                <div class="alert-box">
+                    <div class="alert-header">
+                        <span>⚠️</span>
+                        <span class="alert-title">KEY CHANGES MADE</span>
+                    </div>
+                    <ul class="alert-list">
+                        <li>Updated Sennheiser EW-D to $2,200 each (2025 pricing)</li>
+                        <li>Container shipping updated to $6,500 (40ft to Syria)</li>
+                        <li>Mid-Range VALUE now $52,420 (was $41,420)</li>
+                        <li>All packages include shipping and installation</li>
+                    </ul>
+                </div>
+                
+                <div class="steps-container">
+                    <div class="steps-header">
+                        <span>📊</span> Budget Files
+                    </div>
+                    
+                    <a href="budget-comparison.html" class="file-link" target="_blank">
+                        <div class="file-icon">💰</div>
+                        <div class="file-info">
+                            <div class="file-name">budget-comparison.html</div>
+                            <div class="file-description">Complete cost analysis with 2025 pricing</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Task 3: Equipment Specs -->
+        <div class="task-card completed">
+            <div class="task-header" onclick="toggleTask('task3')">
+                <span class="task-icon">🎛️</span>
+                <div class="task-content">
+                    <h3 class="task-title">
+                        Equipment Specifications
+                        <span class="status-badge">✓ COMPLETED</span>
+                    </h3>
+                    <p class="task-description">Detailed technical specs with current market pricing</p>
+                </div>
+                <span class="expand-icon" id="icon-task3">▼</span>
+            </div>
+            <div class="task-details" id="details-task3">
+                <div class="steps-container">
+                    <div class="steps-header">
+                        <span>🎛️</span> Equipment Documentation
+                    </div>
+                    
+                    <a href="equipment-specs.html" class="file-link" target="_blank">
+                        <div class="file-icon">🔧</div>
+                        <div class="file-info">
+                            <div class="file-name">equipment-specs.html</div>
+                            <div class="file-description">Professional audio equipment catalog</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Task 4: Installation Guide -->
+        <div class="task-card completed">
+            <div class="task-header" onclick="toggleTask('task4')">
+                <span class="task-icon">⚙️</span>
+                <div class="task-content">
+                    <h3 class="task-title">
+                        Installation Guide
+                        <span class="status-badge">✓ COMPLETED</span>
+                    </h3>
+                    <p class="task-description">5-day timeline with professional installation options</p>
+                </div>
+                <span class="expand-icon" id="icon-task4">▼</span>
+            </div>
+            <div class="task-details" id="details-task4">
+                <div class="steps-container">
+                    <div class="steps-header">
+                        <span>⚙️</span> Installation Documentation
+                    </div>
+                    
+                    <a href="installation-guide.html" class="file-link" target="_blank">
+                        <div class="file-icon">🔧</div>
+                        <div class="file-info">
+                            <div class="file-name">installation-guide.html</div>
+                            <div class="file-description">Professional setup and configuration guide</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Task 5: Procurement Documentation -->
+        <div class="task-card completed">
+            <div class="task-header" onclick="toggleTask('task5')">
+                <span class="task-icon">📄</span>
+                <div class="task-content">
+                    <h3 class="task-title">
+                        Procurement Documentation
+                        <span class="status-badge">✓ COMPLETED</span>
+                    </h3>
+                    <p class="task-description">RFQ templates, purchase orders, vendor information</p>
+                </div>
+                <span class="expand-icon" id="icon-task5">▼</span>
+            </div>
+            <div class="task-details" id="details-task5">
+                <div class="steps-container">
+                    <div class="steps-header">
+                        <span>📄</span> Procurement Files
+                    </div>
+                    
+                    <a href="procurement-documentation.html" class="file-link" target="_blank">
+                        <div class="file-icon">📋</div>
+                        <div class="file-info">
+                            <div class="file-name">procurement-documentation.html</div>
+                            <div class="file-description">Professional vendor documentation</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Task 6: Missing Images Generation -->
+        <div class="task-card review">
+            <div class="task-header" onclick="toggleTask('task6-images')">
+                <span class="task-icon">🖼️</span>
+                <div class="task-content">
+                    <h3 class="task-title">
+                        Missing Images Generation
+                        <span class="status-badge review">ACTION REQUIRED</span>
+                    </h3>
+                    <p class="task-description">23+ critical images missing - visual scan found broken image links</p>
+                </div>
+                <span class="expand-icon" id="icon-task6-images">▼</span>
+            </div>
+            <div class="task-details" id="details-task6-images">
+                <div class="alert-box">
+                    <div class="alert-header">
+                        <span>⚠️</span>
+                        <span class="alert-title">CRITICAL: VISUAL VERIFICATION FAILED</span>
+                    </div>
+                    <ul class="alert-list">
+                        <li>Main hero images completely missing (graduation-ceremony-hero.png)</li>
+                        <li>ALL budget charts missing (3-tier-comparison, equipment-count)</li>
+                        <li>Equipment showcase images broken (Sennheiser, QSC, Yamaha)</li>
+                        <li>Coverage diagrams missing (tier1, tier2, tier3)</li>
+                        <li>Professional credibility severely impacted</li>
+                    </ul>
+                </div>
+                
+                <div class="steps-container">
+                    <div class="steps-header">
+                        <span>🖼️</span> Generation Tracker
+                    </div>
+                    
+                    <div style="background: #fff5f5; border: 2px solid #e53e3e; border-radius: 8px; padding: 16px; margin: 16px 0;">
+                        <h4 style="color: #e53e3e; margin-bottom: 12px;">HIGH PRIORITY (10 images) - Generate First:</h4>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 8px;">
+                            <label style="display: flex; align-items: center; gap: 8px; font-size: 13px;">
+                                <input type="checkbox" style="transform: scale(1.2);"> graduation-ceremony-hero.png
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; font-size: 13px;">
+                                <input type="checkbox" style="transform: scale(1.2);"> 3-tier-comparison-2025.png
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; font-size: 13px;">
+                                <input type="checkbox" style="transform: scale(1.2);"> equipment-count-comparison.png
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; font-size: 13px;">
+                                <input type="checkbox" style="transform: scale(1.2);"> sennheiser-ew-d.png
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; font-size: 13px;">
+                                <input type="checkbox" style="transform: scale(1.2);"> shure-mx418.png
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; font-size: 13px;">
+                                <input type="checkbox" style="transform: scale(1.2);"> qsc-k10-2.png
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; font-size: 13px;">
+                                <input type="checkbox" style="transform: scale(1.2);"> speaker-on-tripod.png
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; font-size: 13px;">
+                                <input type="checkbox" style="transform: scale(1.2);"> yamaha-tf3.png
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; font-size: 13px;">
+                                <input type="checkbox" style="transform: scale(1.2);"> coverage-tier1-portable.png
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; font-size: 13px;">
+                                <input type="checkbox" style="transform: scale(1.2);"> coverage-tier2-standard.png
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div style="background: #fffbeb; border: 2px solid #f59e0b; border-radius: 8px; padding: 16px; margin: 16px 0;">
+                        <h4 style="color: #d97706; margin-bottom: 12px;">MEDIUM PRIORITY (6 images) - Generate After HIGH:</h4>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 8px;">
+                            <label style="display: flex; align-items: center; gap: 8px; font-size: 13px;">
+                                <input type="checkbox" style="transform: scale(1.2);"> coverage-tier3-large.png
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; font-size: 13px;">
+                                <input type="checkbox" style="transform: scale(1.2);"> conference-table-setup.png
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; font-size: 13px;">
+                                <input type="checkbox" style="transform: scale(1.2);"> dbx-driverack-pa2.png
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; font-size: 13px;">
+                                <input type="checkbox" style="transform: scale(1.2);"> km-210-9-boom.png
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; font-size: 13px;">
+                                <input type="checkbox" style="transform: scale(1.2);"> portable-system-hero.png
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px; font-size: 13px;">
+                                <input type="checkbox" style="transform: scale(1.2);"> portable-setup-overview.png
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <a href="MISSING-IMAGES-TRACKER.md" class="file-link" target="_blank">
+                        <div class="file-icon">📋</div>
+                        <div class="file-info">
+                            <div class="file-name">MISSING-IMAGES-TRACKER.md</div>
+                            <div class="file-description">Complete list of 23+ missing images with priorities</div>
+                        </div>
+                    </a>
+                    
+                    <a href="IMAGE-GENERATION-PROMPTS.md" class="file-link" target="_blank">
+                        <div class="file-icon">🎨</div>
+                        <div class="file-info">
+                            <div class="file-name">IMAGE-GENERATION-PROMPTS.md</div>
+                            <div class="file-description">Detailed prompts for AI image generation</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="feedback-section" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin: 16px 0;">
+                    <label style="display: block; font-weight: 600; margin-bottom: 8px; color: var(--primary);">Image Generation Progress & Feedback:</label>
+                    <textarea id="feedback-images" placeholder="Track your image generation progress, note any issues with prompts, or request modifications..." style="width: 100%; min-height: 80px; padding: 8px; border: 1px solid #cbd5e0; border-radius: 6px; font-size: 14px;"></textarea>
+                </div>
+                
+                <div class="action-buttons">
+                    <a href="IMAGE-GENERATION-PROMPTS.md" class="btn btn-primary" target="_blank">🎨 View Generation Prompts</a>
+                    <button class="btn" style="background: var(--warning); color: white;" onclick="saveFeedback('images')">💾 Save Progress</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Task 7: User Input Form -->
+        <div class="task-card review">
+            <div class="task-header" onclick="toggleTask('task6')">
+                <span class="task-icon">📝</span>
+                <div class="task-content">
+                    <h3 class="task-title">
+                        User Input Collection Form
+                        <span class="status-badge review">REVIEW NEEDED</span>
+                    </h3>
+                    <p class="task-description">Final form to collect your project requirements</p>
+                </div>
+                <span class="expand-icon" id="icon-task6">▼</span>
+            </div>
+            <div class="task-details" id="details-task6">
+                <div class="alert-box">
+                    <div class="alert-header">
+                        <span>⚠️</span>
+                        <span class="alert-title">ACTION REQUIRED (ADHD Alert!)</span>
+                    </div>
+                    <ul class="alert-list">
+                        <li>Fill out your actual contact information</li>
+                        <li>Select your preferred package (Mid-Range VALUE pre-selected)</li>
+                        <li>Choose installation service type</li>
+                        <li>Review and submit to obai@obaisukar.com</li>
+                    </ul>
+                </div>
+                
+                <div class="steps-container">
+                    <div class="steps-header">
+                        <span>📝</span> Form to Complete
+                    </div>
+                    
+                    <a href="user-input-form.html" class="file-link" target="_blank">
+                        <div class="file-icon">📝</div>
+                        <div class="file-info">
+                            <div class="file-name">user-input-form.html</div>
+                            <div class="file-description">Project completion form (NEEDS YOUR INPUT)</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="feedback-section" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin: 16px 0;">
+                    <label style="display: block; font-weight: 600; margin-bottom: 8px; color: var(--primary);">Your Feedback for This Task:</label>
+                    <textarea id="feedback-task6" placeholder="Enter any issues with the user input form or requirements for changes..." style="width: 100%; min-height: 80px; padding: 8px; border: 1px solid #cbd5e0; border-radius: 6px; font-size: 14px;"></textarea>
+                </div>
+                
+                <div class="action-buttons">
+                    <a href="user-input-form.html" class="btn btn-primary" target="_blank">📝 Fill Out Form</a>
+                    <button class="btn" style="background: var(--warning); color: white;" onclick="saveFeedback('task6')">💾 Save Feedback</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="next-steps">
+        <h3><span>🎯</span> Next Steps - What You Need To Do</h3>
+        <ol class="next-steps-list">
+            <li>
+                <span class="step-number">1</span>
+                <span>Open and review the main index.html page</span>
+            </li>
+            <li>
+                <span class="step-number">2</span>
+                <span>Check that all navigation and pricing looks correct</span>
+            </li>
+            <li>
+                <span class="step-number">3</span>
+                <span>Fill out the user-input-form.html with your real information</span>
+            </li>
+            <li>
+                <span class="step-number">4</span>
+                <span>Submit the form to finalize the project</span>
+            </li>
+            <li>
+                <span class="step-number">5</span>
+                <span>Tell me what needs to be revised or if it's ready to go!</span>
+            </li>
+        </ol>
+    </div>
+
+    <script>
+        function toggleTask(taskId) {
+            const details = document.getElementById('details-' + taskId);
+            const icon = document.getElementById('icon-' + taskId);
+            
+            if (details.classList.contains('show')) {
+                details.classList.remove('show');
+                icon.classList.remove('expanded');
+            } else {
+                details.classList.add('show');
+                icon.classList.add('expanded');
+            }
+        }
+
+        function markAsReviewed(taskId) {
+            const card = document.querySelector(`[onclick="toggleTask('${taskId}')"]`).closest('.task-card');
+            card.classList.remove('review');
+            card.classList.add('completed');
+            
+            const badge = card.querySelector('.status-badge');
+            badge.textContent = '✓ REVIEWED';
+            badge.classList.remove('review');
+            
+            // Confetti effect
+            alert('✅ Marked as reviewed! Great job checking that off the list! 🎉');
+        }
+
+        function saveFeedback(taskId) {
+            const feedback = document.getElementById(`feedback-${taskId}`).value;
+            if (!feedback.trim()) {
+                alert('Please enter feedback before saving.');
+                return;
+            }
+            
+            // Create email with feedback
+            const subject = encodeURIComponent(`Syria PA System - Feedback for ${taskId}`);
+            const body = encodeURIComponent(
+                `TASK FEEDBACK - ${taskId.toUpperCase()}\n\n` +
+                `Feedback:\n${feedback}\n\n` +
+                `Timestamp: ${new Date().toLocaleString()}\n` +
+                `Task: ${document.querySelector(\`[onclick="toggleTask('${taskId}')"]\`).querySelector('.task-title').textContent}\n\n` +
+                `Submitted from: project-completion-dashboard.html`
+            );
+            
+            window.open(`mailto:obai@obaisukar.com?subject=${subject}&body=${body}`);
+            
+            // Save locally
+            localStorage.setItem(`feedback-${taskId}`, feedback);
+            alert('💾 Feedback saved and email prepared! 📧');
+        }
+
+        // Load saved feedback on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const tasks = ['task1', 'task6', 'images'];
+            tasks.forEach(taskId => {
+                const saved = localStorage.getItem(`feedback-${taskId}`);
+                if (saved) {
+                    const textarea = document.getElementById(`feedback-${taskId}`);
+                    if (textarea) textarea.value = saved;
+                }
+            });
+        });
+
+        // Auto-expand review needed items
+        document.addEventListener('DOMContentLoaded', function() {
+            const reviewCards = document.querySelectorAll('.task-card.review');
+            reviewCards.forEach(card => {
+                const header = card.querySelector('.task-header');
+                if (header) {
+                    header.click();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

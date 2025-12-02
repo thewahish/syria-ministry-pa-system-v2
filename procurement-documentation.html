@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="Procurement Documentation - Syria Ministry PA System | RFQ & Purchase Orders" data-ar="وثائق المشتريات - نظام PA وزارة الداخلية السورية | طلب عروض الأسعار وأوامر الشراء">Procurement Documentation - Syria Ministry PA System</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>">
+    <meta name="author" content="أبي سكر - Professional Audio Consultant">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: #f7fafc;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Clean Header - NO gradients */
+        .header {
+            background: #1a202c;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            border-bottom: 3px solid #4299e1;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+        
+        .info-box {
+            background: #2d3748;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            text-align: left;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Language Toggle - Modern Clean Design */
+        .language-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            background: #2d3748;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #4a5568;
+        }
+        
+        .lang-btn {
+            background: none;
+            border: none;
+            color: #a0aec0;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+        
+        .lang-btn.active {
+            background: #4299e1;
+            color: white;
+        }
+        
+        .lang-btn:hover:not(.active) {
+            background: #4a5568;
+            color: white;
+        }
+        
+        /* Navigation */
+        .navigation {
+            background: white;
+            padding: 1rem 0;
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .nav-links a {
+            color: #4a5568;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        
+        .nav-links a:hover {
+            background: #edf2f7;
+            color: #2d3748;
+        }
+        
+        /* Clean Sections - NO gradients */
+        .section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #4299e1;
+        }
+        
+        .section h2 {
+            color: #1a202c;
+            margin-bottom: 1.5rem;
+            font-size: 1.75rem;
+            font-weight: 600;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        /* Document Types */
+        .document-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .document-card {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .document-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-color: #4299e1;
+        }
+        
+        .document-card.rfq {
+            border-color: #38a169;
+        }
+        
+        .document-card.purchase {
+            border-color: #e53e3e;
+        }
+        
+        .document-card.shipping {
+            border-color: #805ad5;
+        }
+        
+        .document-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .document-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 1rem;
+        }
+        
+        /* Professional Table */
+        .procurement-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .procurement-table th {
+            background: #1a202c;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .procurement-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .procurement-table tr:hover {
+            background: #f8fafc;
+        }
+        
+        .procurement-table .item-code {
+            font-family: monospace;
+            background: #edf2f7;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+        }
+        
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #4299e1;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: #3182ce;
+            transform: translateY(-1px);
+        }
+        
+        .btn.download {
+            background: #38a169;
+        }
+        
+        .btn.download:hover {
+            background: #2f855a;
+        }
+        
+        .btn.email {
+            background: #e53e3e;
+        }
+        
+        .btn.email:hover {
+            background: #c53030;
+        }
+        
+        /* Vendor Information */
+        .vendor-section {
+            background: #f0fff4;
+            border: 2px solid #38a169;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .vendor-section h3 {
+            color: #38a169;
+            margin-bottom: 1rem;
+        }
+        
+        .vendor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 1.5rem 0;
+        }
+        
+        .vendor-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #c6f6d5;
+        }
+        
+        /* Terms and Conditions */
+        .terms-section {
+            background: #fffbeb;
+            border: 2px solid #f59e0b;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .terms-section h3 {
+            color: #d97706;
+            margin-bottom: 1rem;
+        }
+        
+        .terms-list {
+            list-style: decimal;
+            margin-left: 2rem;
+            margin-right: 2rem;
+        }
+        
+        .terms-list li {
+            margin: 0.5rem 0;
+            line-height: 1.7;
+        }
+        
+        /* RTL Support */
+        [dir="rtl"] {
+            text-align: right;
+        }
+        
+        [dir="rtl"] .header h1,
+        [dir="rtl"] .header .subtitle {
+            text-align: center;
+        }
+        
+        [dir="rtl"] .language-toggle {
+            right: auto;
+            left: 20px;
+        }
+        
+        [dir="rtl"] .info-box {
+            text-align: right;
+        }
+        
+        [dir="rtl"] .procurement-table th {
+            text-align: right;
+        }
+        
+        [dir="rtl"] .terms-list {
+            margin-left: 0;
+            margin-right: 2rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .language-toggle {
+                position: static;
+                margin: 1rem auto 0;
+            }
+            
+            .section {
+                padding: 1.5rem;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+        
+        /* Hidden by default, shown by JavaScript */
+        [data-lang] {
+            display: none;
+        }
+        
+        [data-lang].active {
+            display: block;
+        }
+        
+        /* Print Styles */
+        @media print {
+            .navigation, .language-toggle, .action-buttons {
+                display: none;
+            }
+            
+            .section {
+                box-shadow: none;
+                border: 1px solid #000;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="language-toggle">
+            <button class="lang-btn active" onclick="switchLanguage('en')">🇺🇸 EN</button>
+            <button class="lang-btn" onclick="switchLanguage('ar')">🇸🇾 AR</button>
+        </div>
+        <div class="container">
+            <h1 data-en="📄 Procurement Documentation: Syria Ministry PA System" data-ar="📄 وثائق المشتريات: نظام PA وزارة الداخلية السورية">📄 Procurement Documentation: Syria Ministry PA System</h1>
+            <p class="subtitle" data-en="Professional RFQ, Purchase Orders, and Vendor Documentation" data-ar="طلب عروض الأسعار المهنية وأوامر الشراء ووثائق المورد">Professional RFQ, Purchase Orders, and Vendor Documentation</p>
+            
+            <div class="info-box">
+                <div data-lang="en" class="active">
+                    <strong>Document Package:</strong> Complete procurement documentation for government PA system<br>
+                    <strong>Procurement Value:</strong> $24,500 - $68,010 USD depending on selected package<br>
+                    <strong>Prepared by:</strong> أبي سكر - Professional Audio Consultant<br>
+                    <strong>Date:</strong> January 2025<br>
+                    <strong>Validity:</strong> 60 days from date of issue
+                </div>
+                <div data-lang="ar">
+                    <strong>حزمة المستندات:</strong> وثائق مشتريات كاملة لنظام PA حكومي<br>
+                    <strong>قيمة المشتريات:</strong> 24,500$ - 68,010$ دولار أمريكي حسب الحزمة المختارة<br>
+                    <strong>أعده:</strong> أبي سكر - استشاري صوتي مهني<br>
+                    <strong>التاريخ:</strong> يناير 2025<br>
+                    <strong>الصلاحية:</strong> 60 يوماً من تاريخ الإصدار
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="navigation">
+        <div class="container">
+            <div class="nav-links">
+                <a href="index.html" data-en="🏠 Main Page" data-ar="🏠 الصفحة الرئيسية">🏠 Main Page</a>
+                <a href="technical-study.html" data-en="📋 Technical Study" data-ar="📋 الدراسة الفنية">📋 Technical Study</a>
+                <a href="budget-comparison.html" data-en="💰 Budget Analysis" data-ar="💰 تحليل الميزانية">💰 Budget Analysis</a>
+                <a href="equipment-specs.html" data-en="🎛️ Equipment Specs" data-ar="🎛️ مواصفات المعدات">🎛️ Equipment Specs</a>
+                <a href="installation-guide.html" data-en="⚙️ Installation" data-ar="⚙️ التركيب">⚙️ Installation</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <!-- ENGLISH CONTENT -->
+        <div data-lang="en" class="active">
+            <!-- Document Types Overview -->
+            <section class="section">
+                <h2>📋 Procurement Document Types</h2>
+                <div class="document-grid">
+                    <div class="document-card rfq">
+                        <div class="document-icon">📝</div>
+                        <div class="document-title">Request for Quotation (RFQ)</div>
+                        <p>Formal vendor solicitation with detailed technical specifications, delivery requirements, and evaluation criteria for professional PA equipment.</p>
+                        <div class="action-buttons">
+                            <button class="btn download" onclick="generateRFQ()">Generate RFQ</button>
+                        </div>
+                    </div>
+                    
+                    <div class="document-card purchase">
+                        <div class="document-icon">🛒</div>
+                        <div class="document-title">Purchase Order (PO)</div>
+                        <p>Official procurement document with vendor details, equipment specifications, pricing, delivery terms, and payment conditions.</p>
+                        <div class="action-buttons">
+                            <button class="btn download" onclick="generatePO()">Generate PO</button>
+                        </div>
+                    </div>
+                    
+                    <div class="document-card shipping">
+                        <div class="document-icon">🚢</div>
+                        <div class="document-title">Shipping & Logistics</div>
+                        <p>Container shipping documentation, Syrian customs requirements, import duties calculation, and delivery coordination forms.</p>
+                        <div class="action-buttons">
+                            <button class="btn download" onclick="generateShipping()">Generate Forms</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Recommended Package Procurement -->
+            <section class="section">
+                <h2>🏆 Recommended Package: Mid-Range VALUE ($52,420)</h2>
+                <table class="procurement-table">
+                    <thead>
+                        <tr>
+                            <th>Item Code</th>
+                            <th>Description</th>
+                            <th>Manufacturer</th>
+                            <th>Qty</th>
+                            <th>Unit Price</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="item-code">EW-D-SK</span></td>
+                            <td>Sennheiser EW-D Digital Wireless Microphone System</td>
+                            <td>Sennheiser</td>
+                            <td>4</td>
+                            <td>$2,200</td>
+                            <td>$8,800</td>
+                        </tr>
+                        <tr>
+                            <td><span class="item-code">MX418</span></td>
+                            <td>Shure MX418 Gooseneck Microphone (Backup)</td>
+                            <td>Shure</td>
+                            <td>2</td>
+                            <td>$320</td>
+                            <td>$640</td>
+                        </tr>
+                        <tr>
+                            <td><span class="item-code">K12.2</span></td>
+                            <td>QSC K12.2 Active Speaker (Updated Model)</td>
+                            <td>QSC</td>
+                            <td>8</td>
+                            <td>$850</td>
+                            <td>$6,800</td>
+                        </tr>
+                        <tr>
+                            <td><span class="item-code">KS212C</span></td>
+                            <td>QSC KS212C Powered Subwoofer</td>
+                            <td>QSC</td>
+                            <td>2</td>
+                            <td>$2,400</td>
+                            <td>$4,800</td>
+                        </tr>
+                        <tr>
+                            <td><span class="item-code">TF3</span></td>
+                            <td>Yamaha TF3 Digital Mixing Console</td>
+                            <td>Yamaha</td>
+                            <td>1</td>
+                            <td>$3,400</td>
+                            <td>$3,400</td>
+                        </tr>
+                        <tr>
+                            <td><span class="item-code">PA2</span></td>
+                            <td>DBX DriveRack PA2 Loudspeaker Management</td>
+                            <td>DBX</td>
+                            <td>1</td>
+                            <td>$800</td>
+                            <td>$800</td>
+                        </tr>
+                        <tr>
+                            <td><span class="item-code">IEM-G4</span></td>
+                            <td>Sennheiser IEM G4 In-Ear Monitoring System</td>
+                            <td>Sennheiser</td>
+                            <td>4</td>
+                            <td>$1,200</td>
+                            <td>$4,800</td>
+                        </tr>
+                        <tr>
+                            <td><span class="item-code">STANDS</span></td>
+                            <td>Professional Stands, Cables & Accessories</td>
+                            <td>Various</td>
+                            <td>1</td>
+                            <td>$2,600</td>
+                            <td>$2,600</td>
+                        </tr>
+                        <tr>
+                            <td><span class="item-code">SHIP-40</span></td>
+                            <td>40ft Container Shipping to Syria</td>
+                            <td>Freight</td>
+                            <td>1</td>
+                            <td>$6,500</td>
+                            <td>$6,500</td>
+                        </tr>
+                        <tr>
+                            <td><span class="item-code">INSTALL</span></td>
+                            <td>Professional Installation & Training</td>
+                            <td>Service</td>
+                            <td>1</td>
+                            <td>$5,500</td>
+                            <td>$5,500</td>
+                        </tr>
+                        <tr>
+                            <td><span class="item-code">TRAVEL</span></td>
+                            <td>Travel & Accommodation (USA to Syria)</td>
+                            <td>Service</td>
+                            <td>1</td>
+                            <td>$3,500</td>
+                            <td>$3,500</td>
+                        </tr>
+                        <tr style="background: #f8fafc; font-weight: bold;">
+                            <td colspan="5"><strong>TOTAL PROJECT VALUE</strong></td>
+                            <td><strong>$52,420</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <!-- Vendor Information -->
+            <section class="section">
+                <h2>🏢 Recommended Vendors & Suppliers</h2>
+                <div class="vendor-section">
+                    <h3>Primary Equipment Vendors</h3>
+                    <div class="vendor-grid">
+                        <div class="vendor-card">
+                            <h4>Professional Audio Systems</h4>
+                            <p><strong>Contact:</strong> sales@proaudiosystems.com</p>
+                            <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+                            <p><strong>Specialization:</strong> Sennheiser, QSC, Yamaha</p>
+                            <p><strong>International:</strong> ✓ Ships worldwide</p>
+                        </div>
+                        
+                        <div class="vendor-card">
+                            <h4>B&H Photo Video Pro Audio</h4>
+                            <p><strong>Contact:</strong> proaudio@bhphotovideo.com</p>
+                            <p><strong>Phone:</strong> +1 (800) 606-6969</p>
+                            <p><strong>Specialization:</strong> Professional broadcast equipment</p>
+                            <p><strong>International:</strong> ✓ Global shipping available</p>
+                        </div>
+                        
+                        <div class="vendor-card">
+                            <h4>Guitar Center Professional</h4>
+                            <p><strong>Contact:</strong> pro@guitarcenter.com</p>
+                            <p><strong>Phone:</strong> +1 (866) 498-7882</p>
+                            <p><strong>Specialization:</strong> Live sound equipment</p>
+                            <p><strong>International:</strong> ✓ Export division</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Terms and Conditions -->
+            <section class="section">
+                <h2>📋 Terms and Conditions</h2>
+                <div class="terms-section">
+                    <h3>⚖️ Standard Procurement Terms</h3>
+                    <ol class="terms-list">
+                        <li><strong>Payment Terms:</strong> 30% deposit upon order confirmation, 70% balance upon equipment delivery to port of shipment</li>
+                        <li><strong>Delivery:</strong> FOB (Free on Board) shipping point. Buyer responsible for international shipping and customs</li>
+                        <li><strong>Lead Time:</strong> 15-30 business days from order confirmation to shipping</li>
+                        <li><strong>Warranty:</strong> Full manufacturer warranty (2-5 years depending on equipment). Warranty service through authorized distributors</li>
+                        <li><strong>Installation Services:</strong> Professional installation available at additional cost. Remote technical support included</li>
+                        <li><strong>Returns:</strong> Equipment must be returned in original condition within 30 days. Buyer pays return shipping</li>
+                        <li><strong>Force Majeure:</strong> Delays due to circumstances beyond control (shipping, customs, natural disasters) not penalized</li>
+                        <li><strong>Technical Support:</strong> 1-year remote technical support included. Additional support contracts available</li>
+                        <li><strong>Currency:</strong> All pricing in US Dollars (USD). Exchange rate fluctuations buyer responsibility</li>
+                        <li><strong>Governing Law:</strong> Contracts governed by laws of the state where vendor is located</li>
+                    </ol>
+                </div>
+            </section>
+            
+            <!-- Professional Services -->
+            <section class="section">
+                <h2>⚙️ Professional Services</h2>
+                <table class="procurement-table">
+                    <thead>
+                        <tr>
+                            <th>Service Type</th>
+                            <th>Description</th>
+                            <th>Duration</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Remote Consultation</td>
+                            <td>Video-guided installation and configuration support</td>
+                            <td>5-8 hours</td>
+                            <td>$1,500</td>
+                        </tr>
+                        <tr>
+                            <td>Professional Installation</td>
+                            <td>On-site installation, calibration, and basic training</td>
+                            <td>3-4 days</td>
+                            <td>$5,500</td>
+                        </tr>
+                        <tr>
+                            <td>Complete Training Package</td>
+                            <td>Installation, extended training, and certification</td>
+                            <td>5-6 days</td>
+                            <td>$8,500</td>
+                        </tr>
+                        <tr>
+                            <td>Remote Support (Annual)</td>
+                            <td>24/7 technical support and system monitoring</td>
+                            <td>12 months</td>
+                            <td>$2,400</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <!-- Final Actions -->
+            <section class="section">
+                <h2>📞 Ready to Proceed?</h2>
+                <div style="text-align: center; margin: 2rem 0;">
+                    <p style="margin-bottom: 2rem;">Complete procurement documentation package ready for submission to vendors and internal approval processes.</p>
+                    <div class="action-buttons">
+                        <a href="mailto:obai@obaisukar.com?subject=Syria Ministry PA System - Procurement Assistance" class="btn email">📧 Contact Engineer</a>
+                        <button class="btn download" onclick="generateCompletePackage()">📦 Generate Complete Package</button>
+                        <a href="budget-comparison.html" class="btn">💰 Review Budget</a>
+                    </div>
+                </div>
+                
+                <div style="background: #e6f3ff; border: 2px solid #4299e1; border-radius: 12px; padding: 2rem; margin: 2rem 0;">
+                    <h3 style="color: #1e3a8a; margin-bottom: 1rem;">🎯 Next Steps</h3>
+                    <ol style="margin-left: 2rem;">
+                        <li>Review and approve selected package configuration</li>
+                        <li>Generate formal RFQ documents for vendor submission</li>
+                        <li>Obtain vendor quotations and compare offers</li>
+                        <li>Submit purchase orders to selected vendors</li>
+                        <li>Coordinate shipping and customs clearance</li>
+                        <li>Schedule professional installation services</li>
+                    </ol>
+                </div>
+            </section>
+        </div>
+        
+        <!-- ARABIC CONTENT -->
+        <div data-lang="ar">
+            <!-- Document Types Overview -->
+            <section class="section">
+                <h2>📋 أنواع وثائق المشتريات</h2>
+                <div class="document-grid">
+                    <div class="document-card rfq">
+                        <div class="document-icon">📝</div>
+                        <div class="document-title">طلب عروض الأسعار</div>
+                        <p>طلب رسمي من الموردين مع مواصفات فنية مفصلة ومتطلبات التسليم ومعايير التقييم لمعدات PA المهنية.</p>
+                        <div class="action-buttons">
+                            <button class="btn download" onclick="generateRFQ()">إنشاء طلب عروض الأسعار</button>
+                        </div>
+                    </div>
+                    
+                    <div class="document-card purchase">
+                        <div class="document-icon">🛒</div>
+                        <div class="document-title">أمر الشراء</div>
+                        <p>وثيقة مشتريات رسمية مع تفاصيل المورد ومواصفات المعدات والتسعير وشروط التسليم وشروط الدفع.</p>
+                        <div class="action-buttons">
+                            <button class="btn download" onclick="generatePO()">إنشاء أمر الشراء</button>
+                        </div>
+                    </div>
+                    
+                    <div class="document-card shipping">
+                        <div class="document-icon">🚢</div>
+                        <div class="document-title">الشحن واللوجستيات</div>
+                        <p>وثائق الشحن بالحاويات ومتطلبات الجمارك السورية وحساب رسوم الاستيراد ونماذج تنسيق التسليم.</p>
+                        <div class="action-buttons">
+                            <button class="btn download" onclick="generateShipping()">إنشاء النماذج</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Recommended Package Procurement -->
+            <section class="section">
+                <h2>🏆 الحزمة الموصى بها: القيمة المتوسطة (52,420$)</h2>
+                <table class="procurement-table">
+                    <thead>
+                        <tr>
+                            <th>كود العنصر</th>
+                            <th>الوصف</th>
+                            <th>الشركة المصنعة</th>
+                            <th>الكمية</th>
+                            <th>سعر الوحدة</th>
+                            <th>الإجمالي</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="item-code">EW-D-SK</span></td>
+                            <td>نظام ميكروفون لاسلكي رقمي Sennheiser EW-D</td>
+                            <td>Sennheiser</td>
+                            <td>4</td>
+                            <td>2,200$</td>
+                            <td>8,800$</td>
+                        </tr>
+                        <tr>
+                            <td><span class="item-code">MX418</span></td>
+                            <td>ميكروفون Shure MX418 Gooseneck (احتياطي)</td>
+                            <td>Shure</td>
+                            <td>2</td>
+                            <td>320$</td>
+                            <td>640$</td>
+                        </tr>
+                        <tr>
+                            <td><span class="item-code">K12.2</span></td>
+                            <td>سماعة نشطة QSC K12.2 (موديل محدث)</td>
+                            <td>QSC</td>
+                            <td>8</td>
+                            <td>850$</td>
+                            <td>6,800$</td>
+                        </tr>
+                        <tr>
+                            <td><span class="item-code">KS212C</span></td>
+                            <td>مضخم صوت QSC KS212C</td>
+                            <td>QSC</td>
+                            <td>2</td>
+                            <td>2,400$</td>
+                            <td>4,800$</td>
+                        </tr>
+                        <tr>
+                            <td><span class="item-code">TF3</span></td>
+                            <td>وحدة التحكم في الخلط الرقمية Yamaha TF3</td>
+                            <td>Yamaha</td>
+                            <td>1</td>
+                            <td>3,400$</td>
+                            <td>3,400$</td>
+                        </tr>
+                        <tr>
+                            <td><span class="item-code">PA2</span></td>
+                            <td>إدارة مكبرات الصوت DBX DriveRack PA2</td>
+                            <td>DBX</td>
+                            <td>1</td>
+                            <td>800$</td>
+                            <td>800$</td>
+                        </tr>
+                        <tr>
+                            <td><span class="item-code">IEM-G4</span></td>
+                            <td>نظام المراقبة الداخلية Sennheiser IEM G4</td>
+                            <td>Sennheiser</td>
+                            <td>4</td>
+                            <td>1,200$</td>
+                            <td>4,800$</td>
+                        </tr>
+                        <tr>
+                            <td><span class="item-code">STANDS</span></td>
+                            <td>حوامل مهنية وكابلات وإكسسوارات</td>
+                            <td>متنوع</td>
+                            <td>1</td>
+                            <td>2,600$</td>
+                            <td>2,600$</td>
+                        </tr>
+                        <tr>
+                            <td><span class="item-code">SHIP-40</span></td>
+                            <td>شحن حاوية 40 قدم إلى سوريا</td>
+                            <td>شحن</td>
+                            <td>1</td>
+                            <td>6,500$</td>
+                            <td>6,500$</td>
+                        </tr>
+                        <tr>
+                            <td><span class="item-code">INSTALL</span></td>
+                            <td>التركيب المهني والتدريب</td>
+                            <td>خدمة</td>
+                            <td>1</td>
+                            <td>5,500$</td>
+                            <td>5,500$</td>
+                        </tr>
+                        <tr>
+                            <td><span class="item-code">TRAVEL</span></td>
+                            <td>السفر والإقامة (الولايات المتحدة إلى سوريا)</td>
+                            <td>خدمة</td>
+                            <td>1</td>
+                            <td>3,500$</td>
+                            <td>3,500$</td>
+                        </tr>
+                        <tr style="background: #f8fafc; font-weight: bold;">
+                            <td colspan="5"><strong>إجمالي قيمة المشروع</strong></td>
+                            <td><strong>52,420$</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <!-- Vendor Information -->
+            <section class="section">
+                <h2>🏢 الموردون والموزعون الموصى بهم</h2>
+                <div class="vendor-section">
+                    <h3>موردو المعدات الأساسيون</h3>
+                    <div class="vendor-grid">
+                        <div class="vendor-card">
+                            <h4>Professional Audio Systems</h4>
+                            <p><strong>الاتصال:</strong> sales@proaudiosystems.com</p>
+                            <p><strong>الهاتف:</strong> +1 (555) 123-4567</p>
+                            <p><strong>التخصص:</strong> Sennheiser, QSC, Yamaha</p>
+                            <p><strong>دولي:</strong> ✓ يشحن عالمياً</p>
+                        </div>
+                        
+                        <div class="vendor-card">
+                            <h4>B&H Photo Video Pro Audio</h4>
+                            <p><strong>الاتصال:</strong> proaudio@bhphotovideo.com</p>
+                            <p><strong>الهاتف:</strong> +1 (800) 606-6969</p>
+                            <p><strong>التخصص:</strong> معدات البث المهنية</p>
+                            <p><strong>دولي:</strong> ✓ شحن عالمي متاح</p>
+                        </div>
+                        
+                        <div class="vendor-card">
+                            <h4>Guitar Center Professional</h4>
+                            <p><strong>الاتصال:</strong> pro@guitarcenter.com</p>
+                            <p><strong>الهاتف:</strong> +1 (866) 498-7882</p>
+                            <p><strong>التخصص:</strong> معدات الصوت المباشر</p>
+                            <p><strong>دولي:</strong> ✓ قسم التصدير</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Terms and Conditions -->
+            <section class="section">
+                <h2>📋 الشروط والأحكام</h2>
+                <div class="terms-section">
+                    <h3>⚖️ شروط المشتريات المعيارية</h3>
+                    <ol class="terms-list">
+                        <li><strong>شروط الدفع:</strong> 30% دفعة مقدمة عند تأكيد الطلب، 70% رصيد عند تسليم المعدات إلى ميناء الشحن</li>
+                        <li><strong>التسليم:</strong> FOB (مجاني على متن الطائرة) نقطة الشحن. المشتري مسؤول عن الشحن الدولي والجمارك</li>
+                        <li><strong>وقت التسليم:</strong> 15-30 يوم عمل من تأكيد الطلب إلى الشحن</li>
+                        <li><strong>الضمان:</strong> ضمان الشركة المصنعة الكامل (2-5 سنوات حسب المعدات). خدمة الضمان من خلال الموزعين المعتمدين</li>
+                        <li><strong>خدمات التركيب:</strong> التركيب المهني متاح بتكلفة إضافية. الدعم الفني عن بُعد مدرج</li>
+                        <li><strong>الإرجاع:</strong> يجب إرجاع المعدات في حالة أصلية خلال 30 يوماً. المشتري يدفع شحن الإرجاع</li>
+                        <li><strong>القوة القاهرة:</strong> التأخير بسبب ظروف خارجة عن السيطرة (الشحن، الجمارك، الكوارث الطبيعية) غير معاقب</li>
+                        <li><strong>الدعم الفني:</strong> دعم فني عن بُعد لمدة سنة واحدة مدرج. عقود دعم إضافية متاحة</li>
+                        <li><strong>العملة:</strong> جميع الأسعار بالدولار الأمريكي. تقلبات أسعار الصرف مسؤولية المشتري</li>
+                        <li><strong>القانون الحاكم:</strong> العقود محكومة بقوانين الولاية حيث يقع المورد</li>
+                    </ol>
+                </div>
+            </section>
+            
+            <!-- Professional Services -->
+            <section class="section">
+                <h2>⚙️ الخدمات المهنية</h2>
+                <table class="procurement-table">
+                    <thead>
+                        <tr>
+                            <th>نوع الخدمة</th>
+                            <th>الوصف</th>
+                            <th>المدة</th>
+                            <th>السعر</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>الاستشارة عن بُعد</td>
+                            <td>دعم التركيب والتكوين المُوجه بالفيديو</td>
+                            <td>5-8 ساعات</td>
+                            <td>1,500$</td>
+                        </tr>
+                        <tr>
+                            <td>التركيب المهني</td>
+                            <td>التركيب في الموقع والمعايرة والتدريب الأساسي</td>
+                            <td>3-4 أيام</td>
+                            <td>5,500$</td>
+                        </tr>
+                        <tr>
+                            <td>حزمة التدريب الكاملة</td>
+                            <td>التركيب والتدريب الممتد والشهادة</td>
+                            <td>5-6 أيام</td>
+                            <td>8,500$</td>
+                        </tr>
+                        <tr>
+                            <td>الدعم عن بُعد (سنوي)</td>
+                            <td>الدعم الفني 24/7 ومراقبة النظام</td>
+                            <td>12 شهر</td>
+                            <td>2,400$</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <!-- Final Actions -->
+            <section class="section">
+                <h2>📞 مستعد للمتابعة؟</h2>
+                <div style="text-align: center; margin: 2rem 0;">
+                    <p style="margin-bottom: 2rem;">حزمة وثائق المشتريات الكاملة جاهزة للتقديم للموردين وعمليات الموافقة الداخلية.</p>
+                    <div class="action-buttons">
+                        <a href="mailto:obai@obaisukar.com?subject=نظام PA وزارة الداخلية السورية - مساعدة المشتريات" class="btn email">📧 اتصل بالمهندس</a>
+                        <button class="btn download" onclick="generateCompletePackage()">📦 إنشاء الحزمة الكاملة</button>
+                        <a href="budget-comparison.html" class="btn">💰 مراجعة الميزانية</a>
+                    </div>
+                </div>
+                
+                <div style="background: #e6f3ff; border: 2px solid #4299e1; border-radius: 12px; padding: 2rem; margin: 2rem 0;">
+                    <h3 style="color: #1e3a8a; margin-bottom: 1rem;">🎯 الخطوات التالية</h3>
+                    <ol style="margin-right: 2rem;">
+                        <li>مراجعة والموافقة على تكوين الحزمة المختارة</li>
+                        <li>إنشاء وثائق طلب عروض الأسعار الرسمية لتقديم المورد</li>
+                        <li>الحصول على عروض أسعار المورد ومقارنة العروض</li>
+                        <li>تقديم أوامر الشراء للموردين المختارين</li>
+                        <li>تنسيق الشحن وخلاص الجمارك</li>
+                        <li>جدولة خدمات التركيب المهنية</li>
+                    </ol>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <div style="background: #1a202c; color: #a0aec0; text-align: center; padding: 2rem 0; margin-top: 4rem;">
+        <div class="container">
+            <p data-en="© 2025 Procurement Documentation - Syria Ministry PA System | Professional Procurement by أبي سكر" data-ar="© 2025 وثائق المشتريات - نظام PA وزارة الداخلية السورية | مشتريات مهنية من أبي سكر">© 2025 Procurement Documentation - Syria Ministry PA System | Professional Procurement by أبي سكر</p>
+            <p data-en="Complete procurement documentation package for professional PA systems" data-ar="حزمة وثائق مشتريات كاملة لأنظمة PA المهنية">Complete procurement documentation package for professional PA systems</p>
+        </div>
+    </div>
+
+    <script>
+        let currentLanguage = 'en';
+        
+        function switchLanguage(lang) {
+            const html = document.documentElement;
+            const currentContent = document.querySelector(`[data-lang="${currentLanguage}"]`);
+            const newContent = document.querySelector(`[data-lang="${lang}"]`);
+            const buttons = document.querySelectorAll('.lang-btn');
+            const elements = document.querySelectorAll('[data-en][data-ar]');
+            
+            // Hide current content
+            if (currentContent) currentContent.classList.remove('active');
+            
+            // Show new content
+            if (newContent) newContent.classList.add('active');
+            
+            // Update direction and lang attribute
+            if (lang === 'ar') {
+                html.setAttribute('dir', 'rtl');
+                html.setAttribute('lang', 'ar');
+            } else {
+                html.setAttribute('dir', 'ltr');
+                html.setAttribute('lang', 'en');
+            }
+            
+            // Update button states
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent.includes(lang === 'ar' ? 'AR' : 'EN')) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Update attribute-based content
+            elements.forEach(element => {
+                const text = element.getAttribute(`data-${lang}`);
+                if (text) {
+                    if (element.tagName === 'TITLE') {
+                        element.textContent = text;
+                    } else {
+                        element.textContent = text;
+                    }
+                }
+            });
+            
+            currentLanguage = lang;
+            localStorage.setItem('preferred-language', lang);
+        }
+        
+        // Document generation functions (placeholders for now)
+        function generateRFQ() {
+            alert('RFQ document generation feature - Contact engineer for implementation');
+        }
+        
+        function generatePO() {
+            alert('Purchase Order document generation feature - Contact engineer for implementation');
+        }
+        
+        function generateShipping() {
+            alert('Shipping documentation generation feature - Contact engineer for implementation');
+        }
+        
+        function generateCompletePackage() {
+            alert('Complete documentation package generation feature - Contact engineer for implementation');
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            const userLang = localStorage.getItem('preferred-language') || 'en';
+            switchLanguage(userLang);
+        });
+    </script>
+</body>
+</html>
