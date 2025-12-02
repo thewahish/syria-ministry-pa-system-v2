@@ -409,7 +409,7 @@
         </div>
         <div class="stat-card">
             <div class="stat-icon">🎨</div>
-            <div class="stat-number">10</div>
+            <div class="stat-number">0/10</div>
             <div class="stat-label">Critical Images</div>
         </div>
         <div class="stat-card">
@@ -643,37 +643,117 @@
                     
                     <div style="background: #fff5f5; border: 2px solid #e53e3e; border-radius: 8px; padding: 16px; margin: 16px 0;">
                         <h4 style="color: #e53e3e; margin-bottom: 12px;">HIGH PRIORITY (10 images) - Generate First:</h4>
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 8px;">
-                            <label style="display: flex; align-items: center; gap: 8px; font-size: 13px;">
-                                <input type="checkbox" style="transform: scale(1.2);"> graduation-ceremony-hero.png
-                            </label>
-                            <label style="display: flex; align-items: center; gap: 8px; font-size: 13px;">
-                                <input type="checkbox" style="transform: scale(1.2);"> 3-tier-comparison-2025.png
-                            </label>
-                            <label style="display: flex; align-items: center; gap: 8px; font-size: 13px;">
-                                <input type="checkbox" style="transform: scale(1.2);"> equipment-count-comparison.png
-                            </label>
-                            <label style="display: flex; align-items: center; gap: 8px; font-size: 13px;">
-                                <input type="checkbox" style="transform: scale(1.2);"> sennheiser-ew-d.png
-                            </label>
-                            <label style="display: flex; align-items: center; gap: 8px; font-size: 13px;">
-                                <input type="checkbox" style="transform: scale(1.2);"> shure-mx418.png
-                            </label>
-                            <label style="display: flex; align-items: center; gap: 8px; font-size: 13px;">
-                                <input type="checkbox" style="transform: scale(1.2);"> qsc-k10-2.png
-                            </label>
-                            <label style="display: flex; align-items: center; gap: 8px; font-size: 13px;">
-                                <input type="checkbox" style="transform: scale(1.2);"> speaker-on-tripod.png
-                            </label>
-                            <label style="display: flex; align-items: center; gap: 8px; font-size: 13px;">
-                                <input type="checkbox" style="transform: scale(1.2);"> yamaha-tf3.png
-                            </label>
-                            <label style="display: flex; align-items: center; gap: 8px; font-size: 13px;">
-                                <input type="checkbox" style="transform: scale(1.2);"> coverage-tier1-portable.png
-                            </label>
-                            <label style="display: flex; align-items: center; gap: 8px; font-size: 13px;">
-                                <input type="checkbox" style="transform: scale(1.2);"> coverage-tier2-standard.png
-                            </label>
+                        
+                        <!-- Image 1: Hero -->
+                        <div class="prompt-card" style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin: 12px 0;">
+                            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                                <input type="checkbox" id="check-hero" style="transform: scale(1.3);" onchange="updateProgress()">
+                                <h5 style="margin: 0; color: #1a202c; font-size: 14px; font-weight: 600;">1. graduation-ceremony-hero.png</h5>
+                                <button class="copy-btn" onclick="copyPrompt('hero-prompt')" style="background: var(--secondary); color: white; border: none; padding: 4px 8px; border-radius: 4px; font-size: 11px; cursor: pointer;">Copy Prompt</button>
+                            </div>
+                            <textarea id="hero-prompt" readonly style="width: 100%; min-height: 120px; padding: 8px; border: 1px solid #cbd5e0; border-radius: 6px; font-size: 12px; font-family: monospace; background: #f8fafc;">Professional PA system setup at a formal government graduation ceremony in Syria. Wide shot showing:
+- Large outdoor venue with 2000+ attendees in formal dress
+- Professional QSC line array speakers on stands in foreground
+- Digital mixing console operated by technician in formal attire
+- Wireless microphones being used by officials on stage
+- Syrian government building architecture in background
+- Clean, professional lighting, realistic photography style
+- Colors: deep blues (#292663), tech blues (#00AEEF), professional atmosphere
+- No text overlays, high resolution suitable for web hero image</textarea>
+                        </div>
+                        
+                        <!-- Image 2: 3-tier Chart -->
+                        <div class="prompt-card" style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin: 12px 0;">
+                            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                                <input type="checkbox" id="check-3tier" style="transform: scale(1.3);" onchange="updateProgress()">
+                                <h5 style="margin: 0; color: #1a202c; font-size: 14px; font-weight: 600;">2. 3-tier-comparison-2025.png</h5>
+                                <button class="copy-btn" onclick="copyPrompt('3tier-prompt')" style="background: var(--secondary); color: white; border: none; padding: 4px 8px; border-radius: 4px; font-size: 11px; cursor: pointer;">Copy Prompt</button>
+                            </div>
+                            <textarea id="3tier-prompt" readonly style="width: 100%; min-height: 100px; padding: 8px; border: 1px solid #cbd5e0; border-radius: 6px; font-size: 12px; font-family: monospace; background: #f8fafc;">Professional business chart comparing 3 PA system tiers for government procurement:
+- Clean bar chart with 3 columns labeled "Emergency ($24,500)", "Mid-Range VALUE ($52,420)", "Enhanced ($68,010)"
+- Y-axis: Equipment count and coverage capacity
+- Color scheme: #292663 (primary bars), #00AEEF (accents), #10B981 (highlights)
+- Include equipment icons: microphones, speakers, mixing boards
+- Professional typography, government-appropriate design
+- 2025 pricing labels clearly visible
+- Clean white background, suitable for web display</textarea>
+                        </div>
+                        
+                        <!-- Image 3: Equipment Count -->
+                        <div class="prompt-card" style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin: 12px 0;">
+                            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                                <input type="checkbox" id="check-equipment" style="transform: scale(1.3);" onchange="updateProgress()">
+                                <h5 style="margin: 0; color: #1a202c; font-size: 14px; font-weight: 600;">3. equipment-count-comparison.png</h5>
+                                <button class="copy-btn" onclick="copyPrompt('equipment-prompt')" style="background: var(--secondary); color: white; border: none; padding: 4px 8px; border-radius: 4px; font-size: 11px; cursor: pointer;">Copy Prompt</button>
+                            </div>
+                            <textarea id="equipment-prompt" readonly style="width: 100%; min-height: 80px; padding: 8px; border: 1px solid #cbd5e0; border-radius: 6px; font-size: 12px; font-family: monospace; background: #f8fafc;">Horizontal bar chart showing equipment quantities by system tier:
+- 3 rows: "Emergency System", "Mid-Range VALUE", "Enhanced 3000"
+- Bars showing: Microphones (4-6), Speakers (6-12), Processing Units (2-4)
+- Color coding: microphones (blue), speakers (green), processing (orange)
+- Professional government document style
+- Clean typography, grid lines, legend
+- Colors: #292663, #00AEEF, #10B981 brand palette</textarea>
+                        </div>
+                        
+                        <!-- Image 4: Sennheiser -->
+                        <div class="prompt-card" style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin: 12px 0;">
+                            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                                <input type="checkbox" id="check-sennheiser" style="transform: scale(1.3);" onchange="updateProgress()">
+                                <h5 style="margin: 0; color: #1a202c; font-size: 14px; font-weight: 600;">4. sennheiser-ew-d.png</h5>
+                                <button class="copy-btn" onclick="copyPrompt('sennheiser-prompt')" style="background: var(--secondary); color: white; border: none; padding: 4px 8px; border-radius: 4px; font-size: 11px; cursor: pointer;">Copy Prompt</button>
+                            </div>
+                            <textarea id="sennheiser-prompt" readonly style="width: 100%; min-height: 80px; padding: 8px; border: 1px solid #cbd5e0; border-radius: 6px; font-size: 12px; font-family: monospace; background: #f8fafc;">Product photography of Sennheiser EW-D digital wireless microphone system:
+- Professional handheld wireless microphone in black
+- Clean white background, studio lighting
+- Slight angle to show 3D form and build quality
+- Professional audio equipment aesthetic
+- High resolution, suitable for e-commerce/specification pages
+- Shadow for depth, but minimal and clean</textarea>
+                        </div>
+                        
+                        <!-- Image 5: Shure -->
+                        <div class="prompt-card" style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin: 12px 0;">
+                            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                                <input type="checkbox" id="check-shure" style="transform: scale(1.3);" onchange="updateProgress()">
+                                <h5 style="margin: 0; color: #1a202c; font-size: 14px; font-weight: 600;">5. shure-mx418.png</h5>
+                                <button class="copy-btn" onclick="copyPrompt('shure-prompt')" style="background: var(--secondary); color: white; border: none; padding: 4px 8px; border-radius: 4px; font-size: 11px; cursor: pointer;">Copy Prompt</button>
+                            </div>
+                            <textarea id="shure-prompt" readonly style="width: 100%; min-height: 80px; padding: 8px; border: 1px solid #cbd5e0; border-radius: 6px; font-size: 12px; font-family: monospace; background: #f8fafc;">Product photography of Shure MX418 gooseneck microphone:
+- Professional flexible gooseneck microphone in black
+- XLR connector visible at base
+- Clean white background, studio lighting
+- Positioned to show flexible neck curve and capsule detail
+- Professional audio equipment quality
+- No text overlays, clean product shot</textarea>
+                        </div>
+                        
+                        <!-- Remaining 5 images in collapsed section -->
+                        <div style="margin-top: 16px;">
+                            <button onclick="toggleHighPriorityRest()" id="toggle-high-rest" style="background: var(--warning); color: black; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: 600;">▼ Show Remaining 5 HIGH Priority Images</button>
+                            
+                            <div id="high-priority-rest" style="display: none; margin-top: 12px;">
+                                <!-- Images 6-10 will go here -->
+                                <div class="prompt-card" style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin: 12px 0;">
+                                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                                        <input type="checkbox" id="check-qsc" style="transform: scale(1.3);" onchange="updateProgress()">
+                                        <h5 style="margin: 0; color: #1a202c; font-size: 14px; font-weight: 600;">6. qsc-k10-2.png</h5>
+                                        <button class="copy-btn" onclick="copyPrompt('qsc-prompt')" style="background: var(--secondary); color: white; border: none; padding: 4px 8px; border-radius: 4px; font-size: 11px; cursor: pointer;">Copy Prompt</button>
+                                    </div>
+                                    <textarea id="qsc-prompt" readonly style="width: 100%; min-height: 80px; padding: 8px; border: 1px solid #cbd5e0; border-radius: 6px; font-size: 12px; font-family: monospace; background: #f8fafc;">Product photography of QSC K12.2 active speaker:
+- Professional black active speaker, front-facing view
+- Distinctive QSC grille design and control panel visible
+- Clean white background with subtle shadow
+- Professional studio lighting showing texture and build quality
+- Positioned at slight angle to show depth and form
+- High-end audio equipment aesthetic</textarea>
+                                </div>
+                                
+                                <!-- Continue with remaining images... -->
+                                <div style="text-align: center; padding: 20px; background: #f0f9ff; border-radius: 8px; margin: 12px 0;">
+                                    <p style="color: #1e40af; font-weight: 600; margin: 0;">🔄 Images 7-10 prompts available in full prompt file</p>
+                                    <p style="color: #64748b; font-size: 13px; margin: 4px 0 0 0;">Click "View Generation Prompts" below to see speaker-on-tripod, yamaha-tf3, and coverage diagrams</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
@@ -873,6 +953,78 @@
             });
         });
 
+        // Copy prompt functionality
+        function copyPrompt(textareaId) {
+            const textarea = document.getElementById(textareaId);
+            textarea.select();
+            textarea.setSelectionRange(0, 99999); // For mobile devices
+            navigator.clipboard.writeText(textarea.value).then(function() {
+                // Show feedback
+                const button = event.target;
+                const originalText = button.textContent;
+                button.textContent = 'Copied!';
+                button.style.background = '#10B981';
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.background = '';
+                }, 2000);
+            }).catch(function(err) {
+                // Fallback for older browsers
+                textarea.select();
+                document.execCommand('copy');
+                const button = event.target;
+                button.textContent = 'Copied!';
+                setTimeout(() => button.textContent = 'Copy Prompt', 2000);
+            });
+        }
+
+        // Toggle remaining high priority images
+        function toggleHighPriorityRest() {
+            const container = document.getElementById('high-priority-rest');
+            const button = document.getElementById('toggle-high-rest');
+            
+            if (container.style.display === 'none') {
+                container.style.display = 'block';
+                button.textContent = '▲ Hide Remaining HIGH Priority Images';
+            } else {
+                container.style.display = 'none';
+                button.textContent = '▼ Show Remaining 5 HIGH Priority Images';
+            }
+        }
+
+        // Update progress counter
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"][id^="check-"]');
+            const checked = document.querySelectorAll('input[type="checkbox"][id^="check-"]:checked');
+            const progress = Math.round((checked.length / checkboxes.length) * 100);
+            
+            // Update the stats card
+            const statCards = document.querySelectorAll('.stat-card');
+            statCards.forEach(card => {
+                if (card.textContent.includes('Critical Images')) {
+                    const numberEl = card.querySelector('.stat-number');
+                    numberEl.textContent = `${checked.length}/10`;
+                }
+            });
+            
+            // Save progress to localStorage
+            const checkedIds = Array.from(checked).map(cb => cb.id);
+            localStorage.setItem('image-generation-progress', JSON.stringify(checkedIds));
+        }
+
+        // Load saved progress
+        function loadProgress() {
+            const saved = localStorage.getItem('image-generation-progress');
+            if (saved) {
+                const checkedIds = JSON.parse(saved);
+                checkedIds.forEach(id => {
+                    const checkbox = document.getElementById(id);
+                    if (checkbox) checkbox.checked = true;
+                });
+                updateProgress();
+            }
+        }
+
         // Auto-expand review needed items
         document.addEventListener('DOMContentLoaded', function() {
             const reviewCards = document.querySelectorAll('.task-card.review');
@@ -882,6 +1034,9 @@
                     header.click();
                 }
             });
+            
+            // Load saved progress
+            loadProgress();
         });
     </script>
 </body>
