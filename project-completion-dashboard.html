@@ -165,6 +165,7 @@
 
         .status-badge.review {
             background: var(--warning);
+            color: black;
         }
 
         .expand-icon {
@@ -731,7 +732,7 @@
 
         <!-- Task 7: User Input Form -->
         <div class="task-card review">
-            <div class="task-header" onclick="toggleTask('task6')">
+            <div class="task-header" onclick="toggleTask('task7')">
                 <span class="task-icon">📝</span>
                 <div class="task-content">
                     <h3 class="task-title">
@@ -740,9 +741,9 @@
                     </h3>
                     <p class="task-description">Final form to collect your project requirements</p>
                 </div>
-                <span class="expand-icon" id="icon-task6">▼</span>
+                <span class="expand-icon" id="icon-task7">▼</span>
             </div>
-            <div class="task-details" id="details-task6">
+            <div class="task-details" id="details-task7">
                 <div class="alert-box">
                     <div class="alert-header">
                         <span>⚠️</span>
@@ -772,12 +773,12 @@
                 
                 <div class="feedback-section" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin: 16px 0;">
                     <label style="display: block; font-weight: 600; margin-bottom: 8px; color: var(--primary);">Your Feedback for This Task:</label>
-                    <textarea id="feedback-task6" placeholder="Enter any issues with the user input form or requirements for changes..." style="width: 100%; min-height: 80px; padding: 8px; border: 1px solid #cbd5e0; border-radius: 6px; font-size: 14px;"></textarea>
+                    <textarea id="feedback-task7" placeholder="Enter any issues with the user input form or requirements for changes..." style="width: 100%; min-height: 80px; padding: 8px; border: 1px solid #cbd5e0; border-radius: 6px; font-size: 14px;"></textarea>
                 </div>
                 
                 <div class="action-buttons">
                     <a href="user-input-form.html" class="btn btn-primary" target="_blank">📝 Fill Out Form</a>
-                    <button class="btn" style="background: var(--warning); color: white;" onclick="saveFeedback('task6')">💾 Save Feedback</button>
+                    <button class="btn" style="background: var(--warning); color: white;" onclick="saveFeedback('task7')">💾 Save Feedback</button>
                 </div>
             </div>
         </div>
@@ -862,7 +863,7 @@
 
         // Load saved feedback on page load
         document.addEventListener('DOMContentLoaded', function() {
-            const tasks = ['task1', 'task6', 'images'];
+            const tasks = ['task1', 'task7', 'images'];
             tasks.forEach(taskId => {
                 const saved = localStorage.getItem(`feedback-${taskId}`);
                 if (saved) {
