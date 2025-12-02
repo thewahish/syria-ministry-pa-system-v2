@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="Syria Ministry PA System - Complete Project Overview" data-ar="نظام PA وزارة الداخلية السورية - نظرة شاملة على المشروع">Syria Ministry PA System - Complete Project Overview</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
+    <meta name="author" content="أبي سكر - Professional Audio Consultant">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: #f7fafc;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            position: relative;
+            border-bottom: 4px solid #4299e1;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+        
+        .military-badge {
+            background: #e53e3e;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 1rem;
+            font-weight: 600;
+            display: inline-block;
+            margin: 1rem 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 12px rgba(229, 62, 62, 0.3);
+        }
+        
+        /* Language Toggle */
+        .language-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            background: rgba(45, 55, 72, 0.9);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #4a5568;
+            backdrop-filter: blur(10px);
+        }
+        
+        .lang-btn {
+            background: none;
+            border: none;
+            color: #a0aec0;
+            padding: 10px 18px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .lang-btn.active {
+            background: #4299e1;
+            color: white;
+            box-shadow: 0 2px 8px rgba(66, 153, 225, 0.4);
+        }
+        
+        .lang-btn:hover:not(.active) {
+            background: #4a5568;
+            color: white;
+        }
+        
+        /* Navigation */
+        .navigation {
+            background: white;
+            padding: 1.5rem 0;
+            border-bottom: 2px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .nav-links a {
+            color: #4a5568;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .nav-links a:hover {
+            background: #edf2f7;
+            color: #2d3748;
+            border-color: #4299e1;
+            transform: translateY(-2px);
+        }
+        
+        /* Project Overview Cards */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .overview-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .overview-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #4299e1, #0ea5e9);
+        }
+        
+        .overview-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .overview-card h3 {
+            color: #1a202c;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .overview-card p {
+            color: #4a5568;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .card-features {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+        
+        .card-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f1f5f9;
+            position: relative;
+            padding-left: 1.5rem;
+            color: #2d3748;
+        }
+        
+        .card-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #38a169;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        .card-action {
+            margin-top: 2rem;
+            text-align: center;
+        }
+        
+        .action-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #4299e1, #0ea5e9);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(66, 153, 225, 0.3);
+        }
+        
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(66, 153, 225, 0.4);
+            background: linear-gradient(135deg, #3182ce, #0284c7);
+        }
+        
+        /* Package Comparison */
+        .packages-section {
+            background: white;
+            margin: 3rem 0;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-left: 4px solid #38a169;
+        }
+        
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .package-card {
+            background: linear-gradient(135deg, #f8fafc, #edf2f7);
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .package-card.recommended {
+            border-color: #38a169;
+            background: linear-gradient(135deg, #f0fff4, #e6fffa);
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(56, 161, 105, 0.2);
+        }
+        
+        .package-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .package-card.recommended:hover {
+            transform: translateY(-5px) scale(1.08);
+        }
+        
+        .package-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1a202c;
+        }
+        
+        .package-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #38a169;
+            margin: 1rem 0;
+        }
+        
+        .package-capacity {
+            color: #64748b;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .recommended-badge {
+            background: #38a169;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        
+        /* Quick Stats */
+        .stats-section {
+            background: linear-gradient(135deg, #1a202c, #2d3748);
+            color: white;
+            padding: 3rem 0;
+            margin: 3rem 0;
+            border-radius: 12px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        
+        .stat-item {
+            padding: 1.5rem;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #4299e1;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: #a0aec0;
+            margin-top: 0.5rem;
+        }
+        
+        /* Contact Section */
+        .contact-highlight {
+            background: linear-gradient(135deg, #0ea5e9, #0284c7);
+            color: white;
+            padding: 3rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .contact-item {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .contact-item h4 {
+            margin-bottom: 1rem;
+            color: #bfdbfe;
+        }
+        
+        .contact-item strong {
+            font-size: 1.2rem;
+            color: white;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #1a202c;
+            color: #a0aec0;
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+        
+        /* RTL Support */
+        [dir="rtl"] {
+            text-align: right;
+        }
+        
+        [dir="rtl"] .header h1,
+        [dir="rtl"] .header .subtitle {
+            text-align: center;
+        }
+        
+        [dir="rtl"] .language-toggle {
+            right: auto;
+            left: 20px;
+        }
+        
+        [dir="rtl"] .card-features li {
+            padding-right: 1.5rem;
+            padding-left: 0;
+        }
+        
+        [dir="rtl"] .card-features li::before {
+            right: 0;
+            left: auto;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .language-toggle {
+                position: static;
+                margin: 1rem auto 0;
+            }
+            
+            .overview-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .nav-links a {
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* Hidden by default, shown by JavaScript */
+        [data-lang] {
+            display: none;
+        }
+        
+        [data-lang].active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="language-toggle">
+            <button class="lang-btn active" onclick="switchLanguage('en')">🇺🇸 EN</button>
+            <button class="lang-btn" onclick="switchLanguage('ar')">🇸🇾 AR</button>
+        </div>
+        <div class="container">
+            <h1 data-en="🎯 Syria Ministry PA System" data-ar="🎯 نظام PA وزارة الداخلية السورية">🎯 Syria Ministry PA System</h1>
+            <p class="subtitle" data-en="Complete Military-Grade Professional Audio Solutions for Government Operations" data-ar="حلول صوتية مهنية عسكرية كاملة للعمليات الحكومية">Complete Military-Grade Professional Audio Solutions for Government Operations</p>
+            <div class="military-badge" data-en="NATO-STANDARD MILITARY GRADE" data-ar="مستوى عسكري معيار حلف شمال الأطلسي">NATO-STANDARD MILITARY GRADE</div>
+        </div>
+    </div>
+    
+    <div class="navigation">
+        <div class="container">
+            <div class="nav-links">
+                <a href="#overview" data-en="🎯 Overview" data-ar="🎯 نظرة عامة">🎯 Overview</a>
+                <a href="technical-study.html" data-en="📋 Technical Study" data-ar="📋 الدراسة الفنية">📋 Technical Study</a>
+                <a href="budget-comparison.html" data-en="💰 Budget Analysis" data-ar="💰 تحليل الميزانية">💰 Budget Analysis</a>
+                <a href="equipment-specs.html" data-en="🎛️ Equipment Specs" data-ar="🎛️ مواصفات المعدات">🎛️ Equipment Specs</a>
+                <a href="technical-specifications.html" data-en="📋 Tech Specs for Bidding" data-ar="📋 المواصفات للمناقصة">📋 Tech Specs for Bidding</a>
+                <a href="shipping-guide.html" data-en="🚢 Shipping Guide" data-ar="🚢 دليل الشحن">🚢 Shipping Guide</a>
+                <a href="installation-guide.html" data-en="⚙️ Installation" data-ar="⚙️ التركيب">⚙️ Installation</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <!-- ENGLISH CONTENT -->
+        <div data-lang="en" class="active">
+            <!-- Project Overview -->
+            <section id="overview">
+                <h2 style="text-align: center; margin: 2rem 0; font-size: 2.2rem; color: #1a202c;">📋 Complete Project Documentation</h2>
+                
+                <div class="overview-grid">
+                    <div class="overview-card">
+                        <h3>📋 Technical Study</h3>
+                        <p>Comprehensive professional engineering analysis with methodology, selection criteria, and rational decision-making process for Syrian government installations.</p>
+                        <ul class="card-features">
+                            <li>Military engineering methodology and requirements analysis</li>
+                            <li>AES-256 encryption and NATO frequency compatibility</li>
+                            <li>99.9% mission-critical reliability standards</li>
+                            <li>RF coordination and interference immunity</li>
+                            <li>Syrian infrastructure integration analysis</li>
+                        </ul>
+                        <div class="card-action">
+                            <a href="technical-study.html" class="action-btn">View Technical Study</a>
+                        </div>
+                    </div>
+
+                    <div class="overview-card">
+                        <h3>💰 Budget Analysis</h3>
+                        <p>Complete cost analysis with individual equipment pricing, shipping costs, and comprehensive cost breakdowns for each system tier.</p>
+                        <ul class="card-features">
+                            <li>Individual item pricing for all equipment</li>
+                            <li>Three professional-grade package options</li>
+                            <li>2025 updated pricing with shipping included</li>
+                            <li>Military contractor sourcing and support</li>
+                            <li>ROI analysis and 5-year cost effectiveness</li>
+                        </ul>
+                        <div class="card-action">
+                            <a href="budget-comparison.html" class="action-btn">View Budget Analysis</a>
+                        </div>
+                    </div>
+
+                    <div class="overview-card">
+                        <h3>🎛️ Equipment Specifications</h3>
+                        <p>Detailed professional equipment specifications with advanced IEM & talkback system for mobile supervision and tactical operations.</p>
+                        <ul class="card-features">
+                            <li>Advanced IEM system for 300m+ mobile coverage</li>
+                            <li>Military-grade talkback with auto-ducking</li>
+                            <li>Multi-track recording and video integration</li>
+                            <li>Professional equipment showcase with images</li>
+                            <li>Technical specifications and compatibility</li>
+                        </ul>
+                        <div class="card-action">
+                            <a href="equipment-specs.html" class="action-btn">View Equipment Specs</a>
+                        </div>
+                    </div>
+
+                    <div class="overview-card">
+                        <h3>📋 Technical Specifications for Bidding</h3>
+                        <p>Vendor-neutral technical requirements for competitive bidding, allowing alternative suppliers to provide equivalent solutions.</p>
+                        <ul class="card-features">
+                            <li>Brand-neutral specifications for competitive bidding</li>
+                            <li>Minimum technical requirements for all equipment</li>
+                            <li>Government procurement compliance</li>
+                            <li>Security and military standards requirements</li>
+                            <li>Complete bidding instructions and submission guidelines</li>
+                        </ul>
+                        <div class="card-action">
+                            <a href="technical-specifications.html" class="action-btn">View Bidding Specs</a>
+                        </div>
+                    </div>
+
+                    <div class="overview-card">
+                        <h3>🚢 Shipping Guide</h3>
+                        <p>Complete shipping and logistics documentation for secure transport of professional equipment to Syria.</p>
+                        <ul class="card-features">
+                            <li>Container shipping options (20ft/40ft)</li>
+                            <li>Syrian import regulations and customs</li>
+                            <li>Military equipment clearance procedures</li>
+                            <li>2025 updated shipping costs and timelines</li>
+                            <li>Professional packaging and insurance</li>
+                        </ul>
+                        <div class="card-action">
+                            <a href="shipping-guide.html" class="action-btn">View Shipping Guide</a>
+                        </div>
+                    </div>
+
+                    <div class="overview-card">
+                        <h3>⚙️ Installation Guide</h3>
+                        <p>Professional installation procedures, system commissioning, and tactical deployment guidelines for military operations.</p>
+                        <ul class="card-features">
+                            <li>Military-grade installation procedures</li>
+                            <li>System commissioning and testing</li>
+                            <li>Tactical deployment guidelines</li>
+                            <li>Operator training and maintenance</li>
+                            <li>Remote support and troubleshooting</li>
+                        </ul>
+                        <div class="card-action">
+                            <a href="installation-guide.html" class="action-btn">View Installation Guide</a>
+                        </div>
+                    </div>
+
+                    <div class="overview-card">
+                        <h3>📻 Portable Bluetooth Systems</h3>
+                        <p>Battery-powered portable PA systems with 2 or 4 speakers for rapid deployment at small events, emergency situations, and mobile operations.</p>
+                        <ul class="card-features">
+                            <li>2-speaker system: $3,200 (50-200 people, 5-min setup)</li>
+                            <li>4-speaker system: $6,100 (200-500 people, 10-min setup)</li>
+                            <li>Bluetooth connectivity with XLR inputs</li>
+                            <li>8-12 hour battery life</li>
+                            <li>Master/slave wireless configuration</li>
+                            <li>Perfect for emergency deployments</li>
+                        </ul>
+                        <div class="card-action">
+                            <a href="#portable-packages" class="action-btn">View Portable Options</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Package Comparison -->
+            <section class="packages-section">
+                <h2 style="text-align: center; margin-bottom: 1.5rem; font-size: 2rem; color: #1a202c;">💼 Military-Grade Package Options</h2>
+                <p style="text-align: center; margin-bottom: 2rem; color: #4a5568; font-size: 1.1rem;">Choose the optimal solution for your mission-critical requirements</p>
+                
+                <div class="packages-grid">
+                    <div class="package-card">
+                        <div class="package-title">Emergency Package</div>
+                        <div class="package-price">$24,500</div>
+                        <div class="package-capacity">800-1000 personnel capacity</div>
+                        <ul class="card-features">
+                            <li>4 analog wireless + 2 wired microphones</li>
+                            <li>6 active PA speakers + 2 subwoofers</li>
+                            <li>Basic in-ear monitoring systems</li>
+                            <li>Digital mixing console with effects</li>
+                            <li>Essential military operation capability</li>
+                        </ul>
+                    </div>
+
+                    <div class="package-card recommended">
+                        <div class="recommended-badge">⭐ MILITARY RECOMMENDED</div>
+                        <div class="package-title">Mid-Range VALUE Package</div>
+                        <div class="package-price">$52,420</div>
+                        <div class="package-capacity">2000 personnel capacity</div>
+                        <ul class="card-features">
+                            <li>4 Sennheiser EW-D professional digital wireless</li>
+                            <li>8 QSC K12.2 line array speakers (NATO-approved)</li>
+                            <li>Professional wireless IEM system</li>
+                            <li>AES-256 encryption & remote control</li>
+                            <li>Complete tactical installation guidance</li>
+                        </ul>
+                    </div>
+
+                    <div class="package-card">
+                        <div class="package-title">Enhanced Military Package</div>
+                        <div class="package-price">$68,010</div>
+                        <div class="package-capacity">3000+ personnel capacity</div>
+                        <ul class="card-features">
+                            <li>6 professional digital wireless + 2 wired</li>
+                            <li>12 tactical line array + 8 delay towers</li>
+                            <li>Extended-range military IEM systems</li>
+                            <li>Distributed tactical sound architecture</li>
+                            <li>Advanced encrypted network control</li>
+                        </ul>
+                    </div>
+
+                    <div class="package-card">
+                        <div class="package-title">Portable Emergency Systems</div>
+                        <div class="package-price">$3,200 - $6,100</div>
+                        <div class="package-capacity">50-500 personnel capacity</div>
+                        <ul class="card-features">
+                            <li>2-speaker: $3,200 (50-200 people)</li>
+                            <li>4-speaker: $6,100 (200-500 people)</li>
+                            <li>5-10 minute rapid deployment</li>
+                            <li>8-12 hour battery operation</li>
+                            <li>Bluetooth + XLR connectivity</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project Stats -->
+            <section class="stats-section">
+                <div class="container">
+                    <h2 style="text-align: center; margin-bottom: 2rem; font-size: 2rem;">🔢 Project Statistics</h2>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">6</span>
+                            <div class="stat-label">Complete Documentation Pages</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">3</span>
+                            <div class="stat-label">Military-Grade Package Options</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">300m+</span>
+                            <div class="stat-label">Mobile IEM Coverage Range</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">99.9%</span>
+                            <div class="stat-label">Mission-Critical Reliability</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">AES-256</span>
+                            <div class="stat-label">Military Encryption Standard</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">2025</span>
+                            <div class="stat-label">Updated Specifications</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- ARABIC CONTENT -->
+        <div data-lang="ar">
+            <!-- نظرة عامة على المشروع -->
+            <section id="overview">
+                <h2 style="text-align: center; margin: 2rem 0; font-size: 2.2rem; color: #1a202c;">📋 وثائق المشروع الكاملة</h2>
+                
+                <div class="overview-grid">
+                    <div class="overview-card">
+                        <h3>📋 الدراسة الفنية</h3>
+                        <p>تحليل هندسي شامل بمستوى عسكري مع المنهجية ومعايير الاختيار وعملية صنع القرار المنطقي للتركيبات الحكومية السورية.</p>
+                        <ul class="card-features">
+                            <li>منهجية هندسية عسكرية وتحليل المتطلبات</li>
+                            <li>تشفير AES-256 وتوافق تردد الناتو</li>
+                            <li>معايير موثوقية بالغة الأهمية 99.9%</li>
+                            <li>تنسيق RF ومناعة التداخل</li>
+                            <li>تحليل تكامل البنية التحتية السورية</li>
+                        </ul>
+                        <div class="card-action">
+                            <a href="technical-study.html" class="action-btn">عرض الدراسة الفنية</a>
+                        </div>
+                    </div>
+
+                    <div class="overview-card">
+                        <h3>💰 تحليل الميزانية</h3>
+                        <p>تحليل تكلفة كامل مع تسعير المعدات الفردية وتكاليف الشحن وتفصيل شامل للتكلفة لكل مستوى نظام.</p>
+                        <ul class="card-features">
+                            <li>تسعير العنصر الفردي لجميع المعدات</li>
+                            <li>ثلاثة خيارات حزم عسكرية</li>
+                            <li>تسعير محدث 2025 مع الشحن المدرج</li>
+                            <li>مصادر ودعم المقاول العسكري</li>
+                            <li>تحليل العائد على الاستثمار وفعالية التكلفة لمدة 5 سنوات</li>
+                        </ul>
+                        <div class="card-action">
+                            <a href="budget-comparison.html" class="action-btn">عرض تحليل الميزانية</a>
+                        </div>
+                    </div>
+
+                    <div class="overview-card">
+                        <h3>🎛️ مواصفات المعدات</h3>
+                        <p>مواصفات معدات عسكرية مفصلة مع نظام IEM وتوكباك متقدم للإشراف المتنقل والعمليات التكتيكية.</p>
+                        <ul class="card-features">
+                            <li>نظام IEM متقدم للتغطية المتنقلة 300م+</li>
+                            <li>توكباك عسكري مع التخميد التلقائي</li>
+                            <li>تسجيل متعدد المسارات وتكامل الفيديو</li>
+                            <li>عرض المعدات المهنية مع الصور</li>
+                            <li>المواصفات الفنية والتوافق</li>
+                        </ul>
+                        <div class="card-action">
+                            <a href="equipment-specs.html" class="action-btn">عرض مواصفات المعدات</a>
+                        </div>
+                    </div>
+
+                    <div class="overview-card">
+                        <h3>📋 المواصفات الفنية للمناقصة</h3>
+                        <p>متطلبات فنية محايدة للمورد للمناقصات التنافسية، مما يسمح للموردين البديلين بتقديم حلول مكافئة.</p>
+                        <ul class="card-features">
+                            <li>مواصفات محايدة العلامة التجارية للمناقصات التنافسية</li>
+                            <li>الحد الأدنى من المتطلبات الفنية لجميع المعدات</li>
+                            <li>امتثال المشتريات الحكومية</li>
+                            <li>متطلبات معايير الأمن والعسكرية</li>
+                            <li>تعليمات المناقصة الكاملة وإرشادات التقديم</li>
+                        </ul>
+                        <div class="card-action">
+                            <a href="technical-specifications.html" class="action-btn">عرض مواصفات المناقصة</a>
+                        </div>
+                    </div>
+
+                    <div class="overview-card">
+                        <h3>🚢 دليل الشحن</h3>
+                        <p>وثائق الشحن واللوجستيات الكاملة للنقل الآمن للمعدات العسكرية إلى سوريا.</p>
+                        <ul class="card-features">
+                            <li>خيارات شحن الحاويات (20 قدم/40 قدم)</li>
+                            <li>لوائح الاستيراد والجمارك السورية</li>
+                            <li>إجراءات تخليص المعدات العسكرية</li>
+                            <li>تكاليف الشحن والجدول الزمني المحدث 2025</li>
+                            <li>التغليف المهني والتأمين</li>
+                        </ul>
+                        <div class="card-action">
+                            <a href="shipping-guide.html" class="action-btn">عرض دليل الشحن</a>
+                        </div>
+                    </div>
+
+                    <div class="overview-card">
+                        <h3>⚙️ دليل التركيب</h3>
+                        <p>إجراءات التركيب المهنية وتكليف النظام وإرشادات النشر التكتيكي للعمليات العسكرية.</p>
+                        <ul class="card-features">
+                            <li>إجراءات التركيب العسكرية</li>
+                            <li>تكليف النظام والاختبار</li>
+                            <li>إرشادات النشر التكتيكي</li>
+                            <li>تدريب المشغل والصيانة</li>
+                            <li>الدعم عن بُعد واستكشاف الأخطاء</li>
+                        </ul>
+                        <div class="card-action">
+                            <a href="installation-guide.html" class="action-btn">عرض دليل التركيب</a>
+                        </div>
+                    </div>
+
+                    <div class="overview-card">
+                        <h3>📻 أنظمة بلوتوث المحمولة</h3>
+                        <p>أنظمة PA محمولة تعمل بالبطارية مع 2 أو 4 مكبرات صوت للنشر السريع في الأحداث الصغيرة وحالات الطوارئ والعمليات المتنقلة.</p>
+                        <ul class="card-features">
+                            <li>نظام مكبرين: 3,200$ (50-200 شخص، تجهيز 5 دقائق)</li>
+                            <li>نظام 4 مكبرات: 6,100$ (200-500 شخص، تجهيز 10 دقائق)</li>
+                            <li>اتصال بلوتوث مع مدخلات XLR</li>
+                            <li>عمر البطارية 8-12 ساعة</li>
+                            <li>تكوين لاسلكي رئيسي/فرعي</li>
+                            <li>مثالي لنشر الطوارئ</li>
+                        </ul>
+                        <div class="card-action">
+                            <a href="#portable-packages" class="action-btn">عرض الخيارات المحمولة</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- مقارنة الحزم -->
+            <section class="packages-section">
+                <h2 style="text-align: center; margin-bottom: 1.5rem; font-size: 2rem; color: #1a202c;">💼 خيارات الحزم العسكرية</h2>
+                <p style="text-align: center; margin-bottom: 2rem; color: #4a5568; font-size: 1.1rem;">اختر الحل الأمثل لمتطلباتك الحرجة</p>
+                
+                <div class="packages-grid">
+                    <div class="package-card">
+                        <div class="package-title">حزمة الطوارئ</div>
+                        <div class="package-price">24,500$</div>
+                        <div class="package-capacity">سعة 800-1000 فرد</div>
+                        <ul class="card-features">
+                            <li>4 لاسلكي تناظري + 2 ميكروفون سلكي</li>
+                            <li>6 مكبر صوت PA نشط + 2 مضخم صوت</li>
+                            <li>أنظمة مراقبة داخلية أساسية</li>
+                            <li>وحدة خلط رقمية مع التأثيرات</li>
+                            <li>قدرة العمليات العسكرية الأساسية</li>
+                        </ul>
+                    </div>
+
+                    <div class="package-card recommended">
+                        <div class="recommended-badge">⭐ موصى به عسكرياً</div>
+                        <div class="package-title">حزمة القيمة المتوسطة</div>
+                        <div class="package-price">52,420$</div>
+                        <div class="package-capacity">سعة 2000 فرد</div>
+                        <ul class="card-features">
+                            <li>4 Sennheiser EW-D رقمي لاسلكي عسكري</li>
+                            <li>8 مكبر صوت مصفوفة خطية QSC K12.2 (معتمد من الناتو)</li>
+                            <li>نظام IEM لاسلكي مهني</li>
+                            <li>تشفير AES-256 والتحكم عن بُعد</li>
+                            <li>إرشادات التركيب التكتيكي الكاملة</li>
+                        </ul>
+                    </div>
+
+                    <div class="package-card">
+                        <div class="package-title">الحزمة العسكرية المحسنة</div>
+                        <div class="package-price">68,010$</div>
+                        <div class="package-capacity">سعة 3000+ فرد</div>
+                        <ul class="card-features">
+                            <li>6 رقمي لاسلكي عسكري + 2 سلكي</li>
+                            <li>12 مصفوفة خطية تكتيكية + 8 برج تأخير</li>
+                            <li>أنظمة IEM عسكرية ممتدة المدى</li>
+                            <li>هندسة صوت تكتيكية موزعة</li>
+                            <li>تحكم شبكة متقدم مشفر</li>
+                        </ul>
+                    </div>
+
+                    <div class="package-card">
+                        <div class="package-title">أنظمة الطوارئ المحمولة</div>
+                        <div class="package-price">3,200$ - 6,100$</div>
+                        <div class="package-capacity">سعة 50-500 فرد</div>
+                        <ul class="card-features">
+                            <li>مكبران: 3,200$ (50-200 شخص)</li>
+                            <li>4 مكبرات: 6,100$ (200-500 شخص)</li>
+                            <li>نشر سريع 5-10 دقائق</li>
+                            <li>تشغيل البطارية 8-12 ساعة</li>
+                            <li>اتصال بلوتوث + XLR</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- إحصائيات المشروع -->
+            <section class="stats-section">
+                <div class="container">
+                    <h2 style="text-align: center; margin-bottom: 2rem; font-size: 2rem;">🔢 إحصائيات المشروع</h2>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">6</span>
+                            <div class="stat-label">صفحات الوثائق الكاملة</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">3</span>
+                            <div class="stat-label">خيارات الحزم العسكرية</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">300م+</span>
+                            <div class="stat-label">نطاق تغطية IEM المتنقل</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">%99.9</span>
+                            <div class="stat-label">موثوقية حرجة</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">AES-256</span>
+                            <div class="stat-label">معيار التشفير العسكري</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">2025</span>
+                            <div class="stat-label">مواصفات محدثة</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <!-- Contact Section -->
+    <div class="contact-highlight">
+        <div class="container">
+            <h2 style="margin-bottom: 1rem;" data-en="📞 Professional Contact Information" data-ar="📞 معلومات الاتصال المهنية">📞 Professional Contact Information</h2>
+            <p style="margin-bottom: 2rem; opacity: 0.9;" data-en="Get direct access to professional audio systems consulting" data-ar="احصل على وصول مباشر لاستشارات أنظمة الصوت المهنية">Get direct access to professional audio systems consulting</p>
+            
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <h4 data-en="📧 Email Contact" data-ar="📧 البريد الإلكتروني">📧 Email Contact</h4>
+                    <strong>obai@obaisukar.com</strong>
+                    <p style="margin-top: 0.5rem; opacity: 0.8;" data-en="Professional Audio Systems Consulting" data-ar="استشارات أنظمة الصوت المهنية">Professional Audio Systems Consulting</p>
+                </div>
+                
+                <div class="contact-item">
+                    <h4 data-en="📱 Telegram Contact" data-ar="📱 تليجرام">📱 Telegram Contact</h4>
+                    <strong>+1-810-399-8713</strong>
+                    <p style="margin-top: 0.5rem; opacity: 0.8;" data-en="For urgent inquiries and technical support" data-ar="للاستفسارات العاجلة والدعم الفني">For urgent inquiries and technical support</p>
+                </div>
+            </div>
+            
+            <p style="margin-top: 2rem; font-size: 1.1rem;" data-en="Professional Consultant: أبي سكر - Military-Grade Audio Systems Engineer" data-ar="استشاري مهني: أبي سكر - مهندس أنظمة صوتية عسكرية">Professional Consultant: أبي سكر - Military-Grade Audio Systems Engineer</p>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <p style="font-size: 1.1rem; margin-bottom: 0.5rem;" data-en="© 2025 Syria Ministry PA System Project | Complete Military-Grade Audio Engineering by أبي سكر" data-ar="© 2025 مشروع نظام PA وزارة الداخلية السورية | هندسة صوتية عسكرية كاملة من أبي سكر">© 2025 Syria Ministry PA System Project | Complete Military-Grade Audio Engineering by أبي سكر</p>
+            <p data-en="NATO-Standard Military Specifications | Competitive Bidding Options | Professional Installation Support" data-ar="مواصفات عسكرية معيار الناتو | خيارات المناقصات التنافسية | دعم التركيب المهني">NATO-Standard Military Specifications | Competitive Bidding Options | Professional Installation Support</p>
+        </div>
+    </div>
+
+    <script>
+        let currentLanguage = 'en';
+        
+        function switchLanguage(lang) {
+            const html = document.documentElement;
+            const currentContent = document.querySelectorAll(`[data-lang="${currentLanguage}"]:not([data-en])`);
+            const newContent = document.querySelectorAll(`[data-lang="${lang}"]:not([data-en])`);
+            const buttons = document.querySelectorAll('.lang-btn');
+            const elements = document.querySelectorAll('[data-en][data-ar]');
+            
+            console.log(`Switching from ${currentLanguage} to ${lang}`);
+            
+            // Hide all current language content sections
+            currentContent.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show all new language content sections
+            newContent.forEach(section => {
+                section.classList.add('active');
+            });
+            
+            // Update direction and lang attribute
+            if (lang === 'ar') {
+                html.setAttribute('dir', 'rtl');
+                html.setAttribute('lang', 'ar');
+            } else {
+                html.setAttribute('dir', 'ltr');
+                html.setAttribute('lang', 'en');
+            }
+            
+            // Update button states
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent.includes(lang === 'ar' ? 'AR' : 'EN')) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Update all attribute-based content (headers, navigation, etc.)
+            elements.forEach(element => {
+                const text = element.getAttribute(`data-${lang}`);
+                if (text && text.trim() !== '') {
+                    if (element.tagName === 'TITLE') {
+                        element.textContent = text;
+                    } else {
+                        // Handle both text content and innerHTML for elements that might contain HTML
+                        if (text.includes('<') || text.includes('&')) {
+                            element.innerHTML = text;
+                        } else {
+                            element.textContent = text;
+                        }
+                    }
+                    console.log(`Updated ${element.tagName} to: ${text.substring(0, 50)}...`);
+                }
+            });
+            
+            currentLanguage = lang;
+            localStorage.setItem('preferred-language', lang);
+            
+            console.log(`Language switched to ${lang} successfully`);
+        }
+        
+        // Initialize - ensure proper language is set on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM Content Loaded - initializing language...');
+            const userLang = localStorage.getItem('preferred-language') || 'en';
+            
+            // Force initial language setting to ensure all elements are properly updated
+            currentLanguage = userLang === 'en' ? 'ar' : 'en'; // Set opposite first
+            switchLanguage(userLang); // Then switch to desired language
+            
+            console.log(`Initialized with language: ${userLang}`);
+        });
+        
+        // Additional function to manually test language switching
+        function testLanguageSwitch() {
+            console.log('Testing language switch...');
+            const testLang = currentLanguage === 'en' ? 'ar' : 'en';
+            switchLanguage(testLang);
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

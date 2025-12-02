@@ -955,16 +955,22 @@
         
         function switchLanguage(lang) {
             const html = document.documentElement;
-            const currentContent = document.querySelector(`[data-lang="${currentLanguage}"]`);
-            const newContent = document.querySelector(`[data-lang="${lang}"]`);
+            const currentContent = document.querySelectorAll(`[data-lang="${currentLanguage}"]:not([data-en])`);
+            const newContent = document.querySelectorAll(`[data-lang="${lang}"]:not([data-en])`);
             const buttons = document.querySelectorAll('.lang-btn');
             const elements = document.querySelectorAll('[data-en][data-ar]');
             
-            // Hide current content
-            if (currentContent) currentContent.classList.remove('active');
+            console.log(`Switching from ${currentLanguage} to ${lang}`);
             
-            // Show new content
-            if (newContent) newContent.classList.add('active');
+            // Hide all current language content sections
+            currentContent.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show all new language content sections
+            newContent.forEach(section => {
+                section.classList.add('active');
+            });
             
             // Update direction and lang attribute
             if (lang === 'ar') {
@@ -983,27 +989,48 @@
                 }
             });
             
-            // Update attribute-based content
+            // Update all attribute-based content (headers, navigation, etc.)
             elements.forEach(element => {
                 const text = element.getAttribute(`data-${lang}`);
-                if (text) {
+                if (text && text.trim() !== '') {
                     if (element.tagName === 'TITLE') {
                         element.textContent = text;
                     } else {
-                        element.textContent = text;
+                        // Handle both text content and innerHTML for elements that might contain HTML
+                        if (text.includes('<') || text.includes('&')) {
+                            element.innerHTML = text;
+                        } else {
+                            element.textContent = text;
+                        }
                     }
+                    console.log(`Updated ${element.tagName} to: ${text.substring(0, 50)}...`);
                 }
             });
             
             currentLanguage = lang;
             localStorage.setItem('preferred-language', lang);
+            
+            console.log(`Language switched to ${lang} successfully`);
         }
         
-        // Initialize
+        // Initialize - ensure proper language is set on page load
         document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM Content Loaded - initializing language...');
             const userLang = localStorage.getItem('preferred-language') || 'en';
-            switchLanguage(userLang);
+            
+            // Force initial language setting to ensure all elements are properly updated
+            currentLanguage = userLang === 'en' ? 'ar' : 'en'; // Set opposite first
+            switchLanguage(userLang); // Then switch to desired language
+            
+            console.log(`Initialized with language: ${userLang}`);
         });
+        
+        // Additional function to manually test language switching
+        function testLanguageSwitch() {
+            console.log('Testing language switch...');
+            const testLang = currentLanguage === 'en' ? 'ar' : 'en';
+            switchLanguage(testLang);
+        }
     </script>
 </body>
 </html>

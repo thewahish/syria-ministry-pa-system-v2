@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="Technical Specifications for Bidding - Syria Ministry PA System" data-ar="المواصفات الفنية للمناقصات - نظام PA وزارة الداخلية السورية">Technical Specifications for Bidding - Syria Ministry PA System</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📋</text></svg>">
+    <meta name="author" content="أبي سكر - Professional Audio Consultant">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: #f7fafc;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Clean Header - NO gradients */
+        .header {
+            background: #1a202c;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            border-bottom: 3px solid #4299e1;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+        
+        .info-box {
+            background: #2d3748;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            text-align: left;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Language Toggle - Modern Clean Design */
+        .language-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            background: #2d3748;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #4a5568;
+        }
+        
+        .lang-btn {
+            background: none;
+            border: none;
+            color: #a0aec0;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+        
+        .lang-btn.active {
+            background: #4299e1;
+            color: white;
+        }
+        
+        .lang-btn:hover:not(.active) {
+            background: #4a5568;
+            color: white;
+        }
+        
+        /* Navigation */
+        .navigation {
+            background: white;
+            padding: 1rem 0;
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .nav-links a {
+            color: #4a5568;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        
+        .nav-links a:hover {
+            background: #edf2f7;
+            color: #2d3748;
+        }
+        
+        /* Clean Sections - NO gradients */
+        .section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #4299e1;
+        }
+        
+        .section h2 {
+            color: #1a202c;
+            margin-bottom: 1.5rem;
+            font-size: 1.75rem;
+            font-weight: 600;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        /* Specifications Tables */
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .spec-table th {
+            background: #1a202c;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .spec-table td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+        
+        .spec-table tr:hover {
+            background: #f8fafc;
+        }
+        
+        .spec-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        /* Package Headers */
+        .package-header {
+            background: #f0f9ff;
+            border: 2px solid #0ea5e9;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .package-title {
+            color: #0369a1;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .package-capacity {
+            color: #64748b;
+            font-size: 1rem;
+        }
+        
+        /* Requirements Box */
+        .requirements-box {
+            background: #fef3c7;
+            border: 2px solid #f59e0b;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .requirements-box h3 {
+            color: #92400e;
+            margin-bottom: 1rem;
+        }
+        
+        /* Note Box */
+        .note-box {
+            background: #f0f9ff;
+            border-left: 4px solid #0ea5e9;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+        
+        .note-box h4 {
+            color: #0369a1;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Contact Information */
+        .contact-section {
+            background: #1a202c;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+        
+        .contact-info {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 1rem;
+            color: #4299e1;
+        }
+        
+        .contact-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .contact-item {
+            background: #2d3748;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #4a5568;
+        }
+        
+        .contact-item h4 {
+            color: #4299e1;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* RTL Support */
+        [dir="rtl"] {
+            text-align: right;
+        }
+        
+        [dir="rtl"] .header h1,
+        [dir="rtl"] .header .subtitle {
+            text-align: center;
+        }
+        
+        [dir="rtl"] .language-toggle {
+            right: auto;
+            left: 20px;
+        }
+        
+        [dir="rtl"] .info-box {
+            text-align: right;
+        }
+        
+        [dir="rtl"] .spec-table th,
+        [dir="rtl"] .spec-table td {
+            text-align: right;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .language-toggle {
+                position: static;
+                margin: 1rem auto 0;
+            }
+            
+            .section {
+                padding: 1.5rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+            }
+        }
+        
+        /* Hidden by default, shown by JavaScript */
+        [data-lang] {
+            display: none;
+        }
+        
+        [data-lang].active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="language-toggle">
+            <button class="lang-btn active" onclick="switchLanguage('en')">🇺🇸 EN</button>
+            <button class="lang-btn" onclick="switchLanguage('ar')">🇸🇾 AR</button>
+        </div>
+        <div class="container">
+            <h1 data-en="📋 Technical Specifications for Bidding: Syria Ministry PA System" data-ar="📋 المواصفات الفنية للمناقصات: نظام PA وزارة الداخلية السورية">📋 Technical Specifications for Bidding: Syria Ministry PA System</h1>
+            <p class="subtitle" data-en="Vendor-Neutral Technical Requirements for Competitive Bidding" data-ar="المتطلبات الفنية المحايدة للمورد للمناقصات التنافسية">Vendor-Neutral Technical Requirements for Competitive Bidding</p>
+            
+            <div class="info-box">
+                <div data-lang="en" class="active">
+                    <strong>Document Purpose:</strong> Vendor-neutral technical specifications for competitive bidding<br>
+                    <strong>Project:</strong> Syria Ministry of Interior PA System Installation<br>
+                    <strong>Prepared by:</strong> أبي سكر - Professional Audio Consultant<br>
+                    <strong>Date:</strong> January 2025<br>
+                    <strong>Classification:</strong> Open Tender Technical Requirements
+                </div>
+                <div data-lang="ar">
+                    <strong>الغرض من الوثيقة:</strong> مواصفات فنية محايدة للمورد للمناقصات التنافسية<br>
+                    <strong>المشروع:</strong> تركيب نظام PA لوزارة الداخلية السورية<br>
+                    <strong>أعده:</strong> أبي سكر - استشاري صوتي مهني<br>
+                    <strong>التاريخ:</strong> يناير 2025<br>
+                    <strong>التصنيف:</strong> متطلبات فنية للمناقصة المفتوحة
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="navigation">
+        <div class="container">
+            <div class="nav-links">
+                <a href="index.html" data-en="🏠 Main Page" data-ar="🏠 الصفحة الرئيسية">🏠 Main Page</a>
+                <a href="technical-study.html" data-en="📋 Technical Study" data-ar="📋 الدراسة الفنية">📋 Technical Study</a>
+                <a href="budget-comparison.html" data-en="💰 Budget Analysis" data-ar="💰 تحليل الميزانية">💰 Budget Analysis</a>
+                <a href="equipment-specs.html" data-en="🎛️ Equipment Specs" data-ar="🎛️ مواصفات المعدات">🎛️ Equipment Specs</a>
+                <a href="shipping-guide.html" data-en="🚢 Shipping Guide" data-ar="🚢 دليل الشحن">🚢 Shipping Guide</a>
+                <a href="installation-guide.html" data-en="⚙️ Installation" data-ar="⚙️ التركيب">⚙️ Installation</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <!-- ENGLISH CONTENT -->
+        <div data-lang="en" class="active">
+            <!-- Introduction -->
+            <section class="section">
+                <h2>📋 Bidding Information</h2>
+                <div class="requirements-box">
+                    <h3>🎯 Purpose of This Document</h3>
+                    <p>This document provides <strong>vendor-neutral technical specifications</strong> for the Syria Ministry of Interior PA System project. Vendors can use these specifications to:</p>
+                    <ul style="margin: 1rem 0 0 2rem;">
+                        <li><strong>Prepare competitive bids</strong> with equivalent equipment from any manufacturer</li>
+                        <li><strong>Source alternative products</strong> that meet the same technical requirements</li>
+                        <li><strong>Offer cost-effective solutions</strong> while maintaining professional standards</li>
+                        <li><strong>Comply with government procurement</strong> requirements for competitive bidding</li>
+                    </ul>
+                </div>
+                
+                <div class="note-box">
+                    <h4>📌 Important Note</h4>
+                    <p>All specifications listed are <strong>minimum requirements</strong>. Vendors may propose equipment with <strong>higher specifications</strong> at competitive pricing. Equivalent or superior functionality from any manufacturer is acceptable as long as it meets these technical minimums.</p>
+                </div>
+            </section>
+
+            <!-- Package Options -->
+            <section class="section">
+                <h2>🎯 System Package Options</h2>
+                
+                <!-- Emergency Package -->
+                <div class="package-header">
+                    <div class="package-title">Package A: Emergency System</div>
+                    <div class="package-capacity">Capacity: 800-1000 people | Budget Category: Essential</div>
+                </div>
+                
+                <table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>Component Category</th>
+                            <th>Technical Requirements</th>
+                            <th>Quantity</th>
+                            <th>Essential Specifications</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Wireless Microphone System</strong></td>
+                            <td>UHF frequency, analog/digital, handheld</td>
+                            <td>4 channels</td>
+                            <td>50+ selectable frequencies, >100m range, 8hr battery life</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Wired Microphones</strong></td>
+                            <td>Dynamic vocal microphone</td>
+                            <td>2 units</td>
+                            <td>Cardioid pattern, >130dB SPL, professional XLR</td>
+                        </tr>
+                        <tr>
+                            <td><strong>PA Speakers</strong></td>
+                            <td>Active/powered speakers, 2-way design</td>
+                            <td>6 units</td>
+                            <td>1000W+ peak, >125dB SPL, 50Hz-20kHz response</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Subwoofers</strong></td>
+                            <td>Active subwoofers, ported/bass reflex</td>
+                            <td>2 units</td>
+                            <td>1200W+ peak, 35Hz-120Hz, >128dB SPL</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Digital Mixing Console</strong></td>
+                            <td>Digital mixer, 16+ input channels</td>
+                            <td>1 unit</td>
+                            <td>Built-in effects, USB recording, scene recall</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Audio Processing</strong></td>
+                            <td>Graphic equalizer, feedback suppressor</td>
+                            <td>2 units</td>
+                            <td>2x31-band EQ, automatic feedback detection</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Monitoring System</strong></td>
+                            <td>Basic in-ear monitors</td>
+                            <td>4 sets</td>
+                            <td>Wired/wireless, >20Hz-20kHz response</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Accessories</strong></td>
+                            <td>Stands, cables, adapters</td>
+                            <td>Complete set</td>
+                            <td>Heavy-duty stands, professional cables, weatherproof</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Mid-Range Package -->
+                <div class="package-header" style="margin-top: 3rem;">
+                    <div class="package-title">Package B: Mid-Range VALUE System (RECOMMENDED)</div>
+                    <div class="package-capacity">Capacity: 2000 people | Budget Category: Professional</div>
+                </div>
+                
+                <table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>Component Category</th>
+                            <th>Technical Requirements</th>
+                            <th>Quantity</th>
+                            <th>Professional Specifications</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Digital Wireless Microphone System</strong></td>
+                            <td>True digital wireless, UHF band, encryption</td>
+                            <td>4 channels</td>
+                            <td>1680+ frequencies, AES-256 encryption, >150m range, diversity reception</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Conference Microphones</strong></td>
+                            <td>Gooseneck condenser microphones</td>
+                            <td>2 units</td>
+                            <td>Cardioid pickup, phantom power, >140dB SPL, flexible positioning</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Line Array Speakers</strong></td>
+                            <td>Active line array, professional grade</td>
+                            <td>8 units</td>
+                            <td>2000W+ peak, >130dB SPL, DSP processing, rigging hardware</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Line Array Subwoofers</strong></td>
+                            <td>Active subwoofers, line array compatible</td>
+                            <td>2 units</td>
+                            <td>2000W+ peak, 30Hz-120Hz, cardioid pattern, DSP controlled</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Digital Mixing Console</strong></td>
+                            <td>Professional digital mixer, 32+ channels</td>
+                            <td>1 unit</td>
+                            <td>Motorized faders, scene recall, built-in effects, network control, USB recording</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Speaker Management System</strong></td>
+                            <td>Digital loudspeaker management</td>
+                            <td>2 units</td>
+                            <td>DSP processing, crossover, EQ, limiting, delay, network control</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Wireless In-Ear Monitoring</strong></td>
+                            <td>Professional wireless IEM system</td>
+                            <td>4 sets</td>
+                            <td>UHF wireless, individual mix control, >8hr battery, diversity reception</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Professional Accessories</strong></td>
+                            <td>Stands, rigging, cables, cases</td>
+                            <td>Complete set</td>
+                            <td>Professional grade, touring quality, weatherproof cases</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Enhanced Package -->
+                <div class="package-header" style="margin-top: 3rem;">
+                    <div class="package-title">Package C: Enhanced Military System</div>
+                    <div class="package-capacity">Capacity: 3000+ people | Budget Category: Premium</div>
+                </div>
+                
+                <table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>Component Category</th>
+                            <th>Technical Requirements</th>
+                            <th>Quantity</th>
+                            <th>Military-Grade Specifications</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Digital Wireless Microphone System</strong></td>
+                            <td>Military-grade digital wireless, encryption</td>
+                            <td>6 channels</td>
+                            <td>AES-256 encryption, >200m range, frequency coordination, diversity reception</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Wireless Headset Microphones</strong></td>
+                            <td>Wireless headset/lavalier microphones</td>
+                            <td>2 units</td>
+                            <td>Ultra-miniature, sweat-resistant, >8hr battery, encrypted transmission</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Main Line Array System</strong></td>
+                            <td>Large format line array speakers</td>
+                            <td>12 units</td>
+                            <td>3000W+ peak, >132dB SPL, distributed system capability, network control</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Delay Tower Speakers</strong></td>
+                            <td>Delay/fill speakers for large venues</td>
+                            <td>8 units</td>
+                            <td>2000W+ peak, time alignment, network control, weather resistant</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Professional Subwoofer Array</strong></td>
+                            <td>Multiple subwoofers, array configuration</td>
+                            <td>4 units</td>
+                            <td>3000W+ peak, cardioid/end-fire array, 25Hz-120Hz, network controlled</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Digital Mixing Console</strong></td>
+                            <td>Professional digital mixer, 32+ channels</td>
+                            <td>1 unit</td>
+                            <td>Motorized faders, scene recall, network control, multitrack recording</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Network Audio Interface</strong></td>
+                            <td>Digital audio networking system</td>
+                            <td>4 units</td>
+                            <td>Dante/AVB networking, low latency, redundancy, remote control</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Extended Wireless IEM System</strong></td>
+                            <td>Professional wireless monitoring, extended range</td>
+                            <td>6 sets</td>
+                            <td>>200m range, individual control, encrypted, diversity reception</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Professional Flight Cases</strong></td>
+                            <td>Touring-grade protective cases</td>
+                            <td>Complete set</td>
+                            <td>Wheeled cases, foam insert, waterproof, professional construction</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Technical Requirements -->
+            <section class="section">
+                <h2>🔧 Technical Requirements & Standards</h2>
+                
+                <table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>Technical Category</th>
+                            <th>Minimum Requirements</th>
+                            <th>Compliance Standards</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Wireless Frequency Coordination</strong></td>
+                            <td>UHF band operation, >100 selectable frequencies, automatic scanning</td>
+                            <td>FCC/CE compliance, interference immunity</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Audio Quality</strong></td>
+                            <td>24-bit/48kHz minimum, >110dB dynamic range, <0.05% THD</td>
+                            <td>AES/EBU digital audio standards</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Network Control</strong></td>
+                            <td>Ethernet control, remote monitoring, scene recall capability</td>
+                            <td>TCP/IP protocols, secure access</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Power Requirements</strong></td>
+                            <td>100-240V universal power, efficient switching supplies</td>
+                            <td>IEC power standards, low standby consumption</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Environmental</strong></td>
+                            <td>0-40°C operation, <90% humidity, dust resistant</td>
+                            <td>IP54 minimum for outdoor components</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Safety & Security</strong></td>
+                            <td>AES-256 encryption (where applicable), secure boot, access control</td>
+                            <td>Government security standards compliance</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="note-box">
+                    <h4>🔒 Security Requirements</h4>
+                    <p>All wireless systems must support <strong>AES-256 encryption</strong> for secure government communications. Network-controllable devices must implement secure access protocols and encrypted data transmission.</p>
+                </div>
+            </section>
+
+            <!-- Installation & Support -->
+            <section class="section">
+                <h2>⚙️ Installation & Support Requirements</h2>
+                
+                <table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>Service Category</th>
+                            <th>Requirements</th>
+                            <th>Deliverables</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>System Design</strong></td>
+                            <td>Professional acoustic modeling, coverage calculations</td>
+                            <td>CAD drawings, coverage plots, frequency coordination plan</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Installation</strong></td>
+                            <td>Professional installation, system commissioning, testing</td>
+                            <td>Installation report, test results, calibration data</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Training</strong></td>
+                            <td>Operator training, maintenance training, documentation</td>
+                            <td>Training materials, operation manuals, maintenance guides</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Support</strong></td>
+                            <td>Remote support capability, local service, spare parts availability</td>
+                            <td>Support agreement, response time guarantees, parts inventory</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Warranty</strong></td>
+                            <td>Minimum 3-year comprehensive warranty, on-site service</td>
+                            <td>Warranty certificate, service agreement, escalation procedures</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Shipping & Logistics -->
+            <section class="section">
+                <h2>🚢 Shipping & Logistics Requirements</h2>
+                
+                <div class="requirements-box">
+                    <h3>📦 Shipping Specifications</h3>
+                    <ul style="margin: 1rem 0 0 2rem;">
+                        <li><strong>Destination:</strong> Syria (various ports - Latakia, Tartus, or Damascus)</li>
+                        <li><strong>Container Type:</strong> 20ft or 40ft standard containers</li>
+                        <li><strong>Packaging:</strong> Export-grade packaging, moisture protection</li>
+                        <li><strong>Documentation:</strong> Commercial invoice, packing list, certificates of origin</li>
+                        <li><strong>Insurance:</strong> Full coverage during transit</li>
+                        <li><strong>Customs:</strong> Vendor assistance with customs clearance</li>
+                    </ul>
+                </div>
+                
+                <div class="note-box">
+                    <h4>🌍 Import Considerations</h4>
+                    <p>Vendors must be familiar with Syrian import regulations and provide all necessary documentation for customs clearance. Equipment must comply with local electrical standards and frequency allocations.</p>
+                </div>
+            </section>
+
+            <!-- Bidding Instructions -->
+            <section class="section">
+                <h2>📝 Bidding Instructions</h2>
+                
+                <div class="requirements-box">
+                    <h3>🎯 Bid Submission Requirements</h3>
+                    <p>Vendors must provide the following information in their bids:</p>
+                    <ol style="margin: 1rem 0 0 2rem;">
+                        <li><strong>Equipment List:</strong> Detailed list with exact model numbers, specifications, and quantities</li>
+                        <li><strong>Technical Compliance:</strong> Demonstration of how proposed equipment meets or exceeds requirements</li>
+                        <li><strong>Pricing:</strong> Itemized pricing including equipment, shipping, installation, and support</li>
+                        <li><strong>Timeline:</strong> Delivery schedule, installation timeline, and project completion date</li>
+                        <li><strong>References:</strong> Similar project references, certifications, and company credentials</li>
+                        <li><strong>Support Plan:</strong> Local support capabilities, warranty terms, and service agreements</li>
+                        <li><strong>Alternative Options:</strong> Any alternative solutions or upgraded options with pricing</li>
+                    </ol>
+                </div>
+                
+                <div class="note-box">
+                    <h4>⏰ Submission Deadline</h4>
+                    <p>All bids must be submitted by <strong>[DATE TO BE SPECIFIED]</strong>. Late submissions will not be considered. Questions regarding specifications should be submitted at least 7 days before the deadline.</p>
+                </div>
+            </section>
+        </div>
+        
+        <!-- ARABIC CONTENT -->
+        <div data-lang="ar">
+            <!-- المقدمة -->
+            <section class="section">
+                <h2>📋 معلومات المناقصة</h2>
+                <div class="requirements-box">
+                    <h3>🎯 الغرض من هذه الوثيقة</h3>
+                    <p>تقدم هذه الوثيقة <strong>مواصفات فنية محايدة للمورد</strong> لمشروع نظام PA لوزارة الداخلية السورية. يمكن للموردين استخدام هذه المواصفات من أجل:</p>
+                    <ul style="margin: 1rem 0 0 2rem;">
+                        <li><strong>إعداد عروض تنافسية</strong> بمعدات مكافئة من أي مصنع</li>
+                        <li><strong>الحصول على منتجات بديلة</strong> تلبي نفس المتطلبات الفنية</li>
+                        <li><strong>تقديم حلول فعالة من حيث التكلفة</strong> مع الحفاظ على المعايير المهنية</li>
+                        <li><strong>الامتثال لمتطلبات المشتريات الحكومية</strong> للمناقصات التنافسية</li>
+                    </ul>
+                </div>
+                
+                <div class="note-box">
+                    <h4>📌 ملاحظة هامة</h4>
+                    <p>جميع المواصفات المدرجة هي <strong>متطلبات دنيا</strong>. يمكن للموردين اقتراح معدات <strong>بمواصفات أعلى</strong> بأسعار تنافسية. الوظائف المكافئة أو الفائقة من أي شركة مصنعة مقبولة طالما أنها تلبي هذه الحدود الدنيا الفنية.</p>
+                </div>
+            </section>
+
+            <!-- خيارات الحزم -->
+            <section class="section">
+                <h2>🎯 خيارات حزم النظام</h2>
+                
+                <!-- الحزمة الطارئة -->
+                <div class="package-header">
+                    <div class="package-title">الحزمة أ: النظام الطارئ</div>
+                    <div class="package-capacity">السعة: 800-1000 شخص | فئة الميزانية: أساسي</div>
+                </div>
+                
+                <table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>فئة المكون</th>
+                            <th>المتطلبات الفنية</th>
+                            <th>الكمية</th>
+                            <th>المواصفات الأساسية</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>نظام الميكروفون اللاسلكي</strong></td>
+                            <td>تردد UHF، تناظري/رقمي، محمول باليد</td>
+                            <td>4 قنوات</td>
+                            <td>50+ تردد قابل للاختيار، >100م نطاق، 8 ساعات عمر البطارية</td>
+                        </tr>
+                        <tr>
+                            <td><strong>الميكروفونات السلكية</strong></td>
+                            <td>ميكروفون صوتي ديناميكي</td>
+                            <td>2 وحدة</td>
+                            <td>نمط cardioid، >130dB SPL، XLR مهني</td>
+                        </tr>
+                        <tr>
+                            <td><strong>سماعات PA</strong></td>
+                            <td>سماعات نشطة/مزودة بالطاقة، تصميم ثنائي الاتجاه</td>
+                            <td>6 وحدات</td>
+                            <td>1000W+ ذروة، >125dB SPL، استجابة 50Hz-20kHz</td>
+                        </tr>
+                        <tr>
+                            <td><strong>مضخمات الصوت</strong></td>
+                            <td>مضخمات صوت نشطة، منفذ/انعكاس الباص</td>
+                            <td>2 وحدة</td>
+                            <td>1200W+ ذروة، 35Hz-120Hz، >128dB SPL</td>
+                        </tr>
+                        <tr>
+                            <td><strong>وحدة التحكم في الخلط الرقمية</strong></td>
+                            <td>خلاط رقمي، 16+ قناة إدخال</td>
+                            <td>1 وحدة</td>
+                            <td>تأثيرات مدمجة، تسجيل USB، استرجاع المشهد</td>
+                        </tr>
+                        <tr>
+                            <td><strong>معالجة الصوت</strong></td>
+                            <td>معادل رسومي، مثبط التغذية الراجعة</td>
+                            <td>2 وحدة</td>
+                            <td>2x31-band EQ، كشف التغذية الراجعة التلقائي</td>
+                        </tr>
+                        <tr>
+                            <td><strong>نظام المراقبة</strong></td>
+                            <td>أجهزة مراقبة داخلية أساسية</td>
+                            <td>4 مجموعات</td>
+                            <td>سلكية/لاسلكية، >20Hz-20kHz استجابة</td>
+                        </tr>
+                        <tr>
+                            <td><strong>الإكسسوارات</strong></td>
+                            <td>الحوامل، الكابلات، المحولات</td>
+                            <td>مجموعة كاملة</td>
+                            <td>حوامل قوية، كابلات مهنية، مقاومة للطقس</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- باقي المحتوى العربي ... -->
+                <!-- يمكن إضافة المزيد من المحتوى العربي هنا -->
+                
+            </section>
+        </div>
+    </div>
+    
+    <!-- Contact Section -->
+    <div class="contact-section">
+        <div class="contact-info">
+            <h3 data-en="📞 Contact Information for Bidding" data-ar="📞 معلومات الاتصال للمناقصة">📞 Contact Information for Bidding</h3>
+            
+            <div class="contact-details">
+                <div class="contact-item">
+                    <h4 data-en="📧 Email Contact" data-ar="📧 البريد الإلكتروني">📧 Email Contact</h4>
+                    <p><strong>obai@obaisukar.com</strong></p>
+                    <p data-en="Primary contact for technical questions and bid submissions" data-ar="الاتصال الأساسي للأسئلة الفنية وتقديم العطاءات">Primary contact for technical questions and bid submissions</p>
+                </div>
+                
+                <div class="contact-item">
+                    <h4 data-en="📱 Telegram Contact" data-ar="📱 تليجرام">📱 Telegram Contact</h4>
+                    <p><strong>+1-810-399-8713</strong></p>
+                    <p data-en="For urgent inquiries and quick communication" data-ar="للاستفسارات العاجلة والتواصل السريع">For urgent inquiries and quick communication</p>
+                </div>
+                
+                <div class="contact-item">
+                    <h4 data-en="🏢 Professional Consultant" data-ar="🏢 استشاري مهني">🏢 Professional Consultant</h4>
+                    <p><strong>أبي سكر</strong></p>
+                    <p data-en="Professional Audio Systems Engineer" data-ar="مهندس أنظمة صوتية مهني">Professional Audio Systems Engineer</p>
+                </div>
+            </div>
+            
+            <p style="margin-top: 2rem; color: #a0aec0;" data-en="© 2025 Technical Specifications - Syria Ministry PA System | Professional Audio Consulting by أبي سكر" data-ar="© 2025 المواصفات الفنية - نظام PA وزارة الداخلية السورية | استشارات صوتية مهنية من أبي سكر">© 2025 Technical Specifications - Syria Ministry PA System | Professional Audio Consulting by أبي سكر</p>
+        </div>
+    </div>
+
+    <script>
+        let currentLanguage = 'en';
+        
+        function switchLanguage(lang) {
+            const html = document.documentElement;
+            const currentContent = document.querySelectorAll(`[data-lang="${currentLanguage}"]:not([data-en])`);
+            const newContent = document.querySelectorAll(`[data-lang="${lang}"]:not([data-en])`);
+            const buttons = document.querySelectorAll('.lang-btn');
+            const elements = document.querySelectorAll('[data-en][data-ar]');
+            
+            console.log(`Switching from ${currentLanguage} to ${lang}`);
+            
+            // Hide all current language content sections
+            currentContent.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show all new language content sections
+            newContent.forEach(section => {
+                section.classList.add('active');
+            });
+            
+            // Update direction and lang attribute
+            if (lang === 'ar') {
+                html.setAttribute('dir', 'rtl');
+                html.setAttribute('lang', 'ar');
+            } else {
+                html.setAttribute('dir', 'ltr');
+                html.setAttribute('lang', 'en');
+            }
+            
+            // Update button states
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent.includes(lang === 'ar' ? 'AR' : 'EN')) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Update all attribute-based content (headers, navigation, etc.)
+            elements.forEach(element => {
+                const text = element.getAttribute(`data-${lang}`);
+                if (text && text.trim() !== '') {
+                    if (element.tagName === 'TITLE') {
+                        element.textContent = text;
+                    } else {
+                        // Handle both text content and innerHTML for elements that might contain HTML
+                        if (text.includes('<') || text.includes('&')) {
+                            element.innerHTML = text;
+                        } else {
+                            element.textContent = text;
+                        }
+                    }
+                    console.log(`Updated ${element.tagName} to: ${text.substring(0, 50)}...`);
+                }
+            });
+            
+            currentLanguage = lang;
+            localStorage.setItem('preferred-language', lang);
+            
+            console.log(`Language switched to ${lang} successfully`);
+        }
+        
+        // Initialize - ensure proper language is set on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM Content Loaded - initializing language...');
+            const userLang = localStorage.getItem('preferred-language') || 'en';
+            
+            // Force initial language setting to ensure all elements are properly updated
+            currentLanguage = userLang === 'en' ? 'ar' : 'en'; // Set opposite first
+            switchLanguage(userLang); // Then switch to desired language
+            
+            console.log(`Initialized with language: ${userLang}`);
+        });
+        
+        // Additional function to manually test language switching
+        function testLanguageSwitch() {
+            console.log('Testing language switch...');
+            const testLang = currentLanguage === 'en' ? 'ar' : 'en';
+            switchLanguage(testLang);
+        }
+    </script>
+</body>
+</html>
