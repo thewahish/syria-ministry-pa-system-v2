@@ -850,7 +850,7 @@
                 `TASK FEEDBACK - ${taskId.toUpperCase()}\n\n` +
                 `Feedback:\n${feedback}\n\n` +
                 `Timestamp: ${new Date().toLocaleString()}\n` +
-                `Task: ${document.querySelector(\`[onclick="toggleTask('${taskId}')"]\`).querySelector('.task-title').textContent}\n\n` +
+                `Task: ${document.querySelector('[onclick*="' + taskId + '"]').querySelector('.task-title').textContent}\n\n` +
                 `Submitted from: project-completion-dashboard.html`
             );
             
